@@ -4,12 +4,11 @@ Overall, we were able to get the ROMI up and running. Our ROMI was able  to comp
 Here is a link to the video of our demo in class ----> [Click Here for YouTube video](https://youtu.be/oJEXl1eLnzM?si=zaIdsHXoJzN_Ktf9).
 
 
-
 ## Hardware Layout
 Our ROMI was setup with a minimal amount of sensors. As you can see in the image below, the wiring diagram is relatively simple as we did not add
 a bluetooth module or a bump sensor. 
 
-![This is an alt text.](https://winsalowjp.github.io/ME405/images/wiring.png "This is a sample image.")
+![Hardware Wiring Diagram](https://winsalowjp.github.io/ME405/images/wiring.png "This is a hardware wiring diagram.")
 
 We went with a simpler approach by using the accelerometer on the IMU to detect bumps and developed our ROMI using simple code that was easy to tweak and test without utilizing a bluetooth module like many other groups. 
 
@@ -157,14 +156,11 @@ We went with a simpler approach by using the accelerometer on the IMU to detect 
 </table>
 
 
-
-
-
 ## Tasks
 
 Our ROMI essentially ran on one task with everything built in. In hindsight, it probably was not the best idea to implement it like that, but it reduced the complexity of our system and helped narrow a lot of issues or prevented a lot of issues from coming up due to its simplicity.  Below is a simple task diagram showing how everything functions
 
-![This is an alt text.](https://winsalowjp.github.io/ME405/images/task_diagram.png "This is a sample image.")
+![Task diagram](https://winsalowjp.github.io/ME405/images/task_diagram.png "This is the task diagram.")
 
 Here is a brief summary of each task:
 * `button_task` was given the highest priority in our scheduler due to debugging purposes. It served as an emergency stop to disable the motors in development
