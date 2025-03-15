@@ -172,7 +172,7 @@ Here is a brief summary of each task:
 
 Here is an FSM diagram detailing the states that drove the actions of ROMI, although lacking in specific details, you will have to check the actual code for more details.
 
-![FSM diagram](https://winsalowjp.github.io/ME405/images/fsm.png "This is a simple FSM diagram")
+![FSM diagram](https://winsalowjp.github.io/ME405/images/fsm1.png "This is a simple FSM diagram")
 
 The ROMI was primarily hard coded when it came to encoder position and absolute angle. We used the Euler angles from the BNO055 IMU to keep track of the ROMI's angle starting from the beginning of the program, up until it finishes the track.
 
