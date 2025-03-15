@@ -1,4 +1,4 @@
-# ME 405
+# Team 14 RedbullRomi, ME 405 Time Trial Competition
 Overall, we were able to get the ROMI up and running. Our ROMI was able  to complete the circuit in about 21 seconds after a 5 second deduction for moving a cup. 
 
 Here is a link to the video of our demo in class ----> [Click Here for YouTube video](https://youtu.be/oJEXl1eLnzM?si=zaIdsHXoJzN_Ktf9).
