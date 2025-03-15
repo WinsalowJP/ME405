@@ -1,7 +1,63 @@
+"""!
+@file cqueue.py
+This file contains documentation and a test program for the custom C queues
+used in the ME405 library. These queues are faster than regular Python based
+queues and don't allocate memory.
 
+The code in this file is @b not the source code which makes the C queues work.
+That code is written in C as the file @c cqueues.c and compiled into the
+MicroPython image used in the ME405 course. 
+
+@author JR Ridgely
+@date   2022-Feb-24 JRR Original file
+@copyright (c) 2022 by JR Ridgely and released under the GNU Public License V3.
+
+It is intended for educational use only, but its use is not limited thereto.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+"""
+
+# Code in this section is never run; it's here to trick Doxygen into making
+# documentation for the C code, whose Python programming interface cannot be
+# directly documented by Doxygen.
 if __name__ == "__not_me__":
 
     class FloatQueue:
+        """!
+        @brief   A fast, pre-allocated queue of floats for MicroPython.
+        @details This class is written in C for speed. When a FloatQueue
+                 object is created, memory is allocated to hold the given
+                 number of items. Data is put into the queue with its put()
+                 method, and the oldest available data is retrieved with the
+                 get() method. Because running put() and get() doesn't
+                 allocate any memory, it can be used in interrupt callbacks. 
+
+                 When one creates a queue, one specifies the number of items
+                 which can be stored at once in the queue. After creating a
+                 queue, one writes items into a queue using its put() method.
+                 Writing into a full queue causes the oldest data to be erased;
+                 method full() can be used before writing to check for such a
+                 problem. Reading from the queue is done by a call to get(),
+                 which returns the oldest available data item or @c None if the
+                 queue is empty:
+                 @code
+                 QUEUE_SIZE = 42
+                 float_queue = cqueue.FloatQueue(QUEUE_SIZE)
+                 for count in range(27):
+                     float_queue.put(count)  # Or do this in interrupt callback
+                 ...
+                 while float_queue.any():
+                     print(float_queue.get())
+                 @endcode
+        """
 
         def __init__(self, size : int):
             """!
