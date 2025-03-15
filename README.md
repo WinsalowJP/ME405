@@ -1,2 +1,3 @@
 # ME405
-#[To visit the full documentation, click here!](docs/index.html)
+#[To visit the full documentation, click here!](https://winsalowjp.github.io/ME405/)
+
