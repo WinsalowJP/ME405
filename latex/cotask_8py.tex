@@ -1,0 +1,43 @@
+\doxysection{cotask.\+py File Reference}
+\hypertarget{cotask_8py}{}\label{cotask_8py}\index{cotask.py@{cotask.py}}
+
+
+This file contains classes to run cooperatively scheduled tasks in a multitasking system.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcotask_1_1_task}{cotask.\+Task}}
+\begin{DoxyCompactList}\small\item\em Implements multitasking with scheduling and some performance logging. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classcotask_1_1_task_list}{cotask.\+Task\+List}}
+\begin{DoxyCompactList}\small\item\em A list of tasks used internally by the task scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacecotask}{cotask}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecotask_ae54e25f8d14958f642bcc22ddeb6c56f}{cotask.\+task\+\_\+list}} = \mbox{\hyperlink{classcotask_1_1_task_list}{Task\+List}}()
+\begin{DoxyCompactList}\small\item\em This is {\bfseries{the}} main task list which is created for scheduling when {\ttfamily \doxylink{cotask_8py}{cotask.\+py}} is imported into a program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains classes to run cooperatively scheduled tasks in a multitasking system. 
+
+Tasks are created as generators, functions which have infinite loops and call {\ttfamily yield} at least once in the loop. References to all the tasks to be run in the system are kept in a list maintained by class {\ttfamily Co\+Task\+List}; the system scheduler then runs the tasks\textquotesingle{} {\ttfamily run()} methods according to a chosen scheduling algorithm such as round-\/robin or highest-\/priority-\/first.
+
+\begin{DoxyAuthor}{Author}
+JR Ridgely 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017-\/Jan-\/01 JRR Approximate date of creation of file 
+
+2021-\/Dec-\/18 JRR Docstrings modified to work without Doxy\+Py\+Py 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+This program is copyright (c) 2017-\/2023 by JR Ridgely and released under the GNU Public License, version 3.\+0.
+\end{DoxyCopyright}
+It is intended for educational use only, but its use is not limited thereto. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

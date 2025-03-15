@@ -1,0 +1,70 @@
+\doxysection{button\+\_\+press Namespace Reference}
+\hypertarget{namespacebutton__press}{}\label{namespacebutton__press}\index{button\_press@{button\_press}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2}{button\+\_\+callback}} (pin)
+\begin{DoxyCompactList}\small\item\em Interrupt callback for the button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacebutton__press_ac401b670e45b40a9516daf1c7b05264f}{button\+\_\+task}} (shared\+\_\+objects, flag)
+\begin{DoxyCompactList}\small\item\em Task function to process button presses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacebutton__press_ad7cfdff05bc0cc6cf2cbfa40127773d3}{button\+\_\+pressed}} = False
+\begin{DoxyCompactList}\small\item\em Global flag to indicate the button was pressed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacebutton__press_a61f7a8a78027d31858ad889fc8ed33c7}{button\+\_\+int}} = Ext\+Int(Pin.\+cpu.\+C13, Ext\+Int.\+IRQ\+\_\+\+FALLING, Pin.\+PULL\+\_\+\+NONE, \mbox{\hyperlink{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2}{button\+\_\+callback}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2}\index{button\_press@{button\_press}!button\_callback@{button\_callback}}
+\index{button\_callback@{button\_callback}!button\_press@{button\_press}}
+\doxysubsubsection{\texorpdfstring{button\_callback()}{button\_callback()}}
+{\footnotesize\ttfamily \label{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2} 
+button\+\_\+press.\+button\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Interrupt callback for the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The pin that triggered the interrupt. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacebutton__press_ac401b670e45b40a9516daf1c7b05264f}\index{button\_press@{button\_press}!button\_task@{button\_task}}
+\index{button\_task@{button\_task}!button\_press@{button\_press}}
+\doxysubsubsection{\texorpdfstring{button\_task()}{button\_task()}}
+{\footnotesize\ttfamily \label{namespacebutton__press_ac401b670e45b40a9516daf1c7b05264f} 
+button\+\_\+press.\+button\+\_\+task (\begin{DoxyParamCaption}\item[{}]{shared\+\_\+objects}{, }\item[{}]{flag}{}\end{DoxyParamCaption})}
+
+
+
+Task function to process button presses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shared\+\_\+objects} & A dictionary containing \textquotesingle{}motorL\textquotesingle{} and \textquotesingle{}motorR\textquotesingle{}. \\
+\hline
+{\em flag} & A flag used to toggle motor state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebutton__press_a61f7a8a78027d31858ad889fc8ed33c7}\index{button\_press@{button\_press}!button\_int@{button\_int}}
+\index{button\_int@{button\_int}!button\_press@{button\_press}}
+\doxysubsubsection{\texorpdfstring{button\_int}{button\_int}}
+{\footnotesize\ttfamily \label{namespacebutton__press_a61f7a8a78027d31858ad889fc8ed33c7} 
+button\+\_\+press.\+button\+\_\+int = Ext\+Int(Pin.\+cpu.\+C13, Ext\+Int.\+IRQ\+\_\+\+FALLING, Pin.\+PULL\+\_\+\+NONE, \mbox{\hyperlink{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2}{button\+\_\+callback}})}
+
+\Hypertarget{namespacebutton__press_ad7cfdff05bc0cc6cf2cbfa40127773d3}\index{button\_press@{button\_press}!button\_pressed@{button\_pressed}}
+\index{button\_pressed@{button\_pressed}!button\_press@{button\_press}}
+\doxysubsubsection{\texorpdfstring{button\_pressed}{button\_pressed}}
+{\footnotesize\ttfamily \label{namespacebutton__press_ad7cfdff05bc0cc6cf2cbfa40127773d3} 
+bool button\+\_\+press.\+button\+\_\+pressed = False}
+
+
+
+Global flag to indicate the button was pressed. 
+

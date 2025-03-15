@@ -1,0 +1,50 @@
+\doxysection{task\+\_\+share.\+py File Reference}
+\hypertarget{task__share_8py}{}\label{task__share_8py}\index{task\_share.py@{task\_share.py}}
+
+
+This file contains classes which allow tasks to share data without the risk of data corruption by interrupts.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtask__share_1_1_base_share}{task\+\_\+share.\+Base\+Share}}
+\begin{DoxyCompactList}\small\item\em Base class for queues and shares which exchange data between tasks. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtask__share_1_1_queue}{task\+\_\+share.\+Queue}}
+\begin{DoxyCompactList}\small\item\em A queue which is used to transfer data from one task to another. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtask__share_1_1_share}{task\+\_\+share.\+Share}}
+\begin{DoxyCompactList}\small\item\em An item which holds data to be shared between tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetask__share}{task\+\_\+share}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetask__share_ad6aea1db68be1a10f72039a5ac9e9dd4}{task\+\_\+share.\+show\+\_\+all}} ()
+\begin{DoxyCompactList}\small\item\em Create a string holding a diagnostic printout showing the status of each queue and share in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacetask__share_a75818e5b662453e3723d0f234c85e519}{task\+\_\+share.\+share\+\_\+list}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em This is a system-\/wide list of all the queues and shared variables. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespacetask__share_af5ee68a35f9ce19aef4c4bd4ab7c2679}{task\+\_\+share.\+type\+\_\+code\+\_\+strings}}
+\begin{DoxyCompactList}\small\item\em This dictionary allows readable printouts of queue and share data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains classes which allow tasks to share data without the risk of data corruption by interrupts. 
+
+\begin{DoxyAuthor}{Author}
+JR Ridgely 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017-\/Jan-\/01 JRR Approximate date of creation of file 
+
+2021-\/Dec-\/18 JRR Docstrings changed to work without Doxy\+Py\+Py 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+This program is copyright (c) 2017-\/2023 by JR Ridgely and released under the GNU Public License, version 3.\+0.
+\end{DoxyCopyright}
+It is intended for educational use only, but its use is not limited thereto. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

@@ -1,0 +1,127 @@
+\doxysection{line\+\_\+sensor.\+Line\+Sensor Class Reference}
+\hypertarget{classline__sensor_1_1_line_sensor}{}\label{classline__sensor_1_1_line_sensor}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+
+
+Represents a single line sensor connected to an ADC pin.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_a8e6febf300c2bfb3270a6f787df1b894}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, pin, \mbox{\hyperlink{classline__sensor_1_1_line_sensor_a97f34e5fc49d200f38a5ce9446621ef0}{white}}=4095, \mbox{\hyperlink{classline__sensor_1_1_line_sensor_aa628134b03ccb20ba18916e57a9a8b58}{black}}=0)
+\begin{DoxyCompactList}\small\item\em Initializes a \doxylink{classline__sensor_1_1_line_sensor}{Line\+Sensor} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_a9c66d6fc8964768001ae963573b019fe}{read\+\_\+raw}} (self)
+\begin{DoxyCompactList}\small\item\em Reads the raw sensor value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_a046b6faf0e17066859d7f9cc3ad4f35b}{calibrate\+\_\+value}} (self, sample)
+\begin{DoxyCompactList}\small\item\em Updates calibration values based on a new sample. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_aee1f8f1d1c1bbf29e24ec73682170f6b}{normalize}} (self, raw)
+\begin{DoxyCompactList}\small\item\em Normalizes a raw value between 0 and 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_aa2657fb59e466b261f86da5ab78823e7}{adc}} = ADC(Pin(pin))
+\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_a97f34e5fc49d200f38a5ce9446621ef0}{white}} = white
+\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_aa628134b03ccb20ba18916e57a9a8b58}{black}} = black
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single line sensor connected to an ADC pin. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classline__sensor_1_1_line_sensor_a8e6febf300c2bfb3270a6f787df1b894}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_a8e6febf300c2bfb3270a6f787df1b894} 
+line\+\_\+sensor.\+Line\+Sensor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pin}{, }\item[{}]{white}{ = {\ttfamily 4095}, }\item[{}]{black}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Initializes a \doxylink{classline__sensor_1_1_line_sensor}{Line\+Sensor} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The ADC pin identifier. \\
+\hline
+{\em white} & Default maximum calibration value (white). \\
+\hline
+{\em black} & Default minimum calibration value (black). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classline__sensor_1_1_line_sensor_a046b6faf0e17066859d7f9cc3ad4f35b}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!calibrate\_value@{calibrate\_value}}
+\index{calibrate\_value@{calibrate\_value}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{calibrate\_value()}{calibrate\_value()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_a046b6faf0e17066859d7f9cc3ad4f35b} 
+line\+\_\+sensor.\+Line\+Sensor.\+calibrate\+\_\+value (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{sample}{}\end{DoxyParamCaption})}
+
+
+
+Updates calibration values based on a new sample. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & The raw sensor value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classline__sensor_1_1_line_sensor_aee1f8f1d1c1bbf29e24ec73682170f6b}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!normalize@{normalize}}
+\index{normalize@{normalize}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_aee1f8f1d1c1bbf29e24ec73682170f6b} 
+line\+\_\+sensor.\+Line\+Sensor.\+normalize (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{raw}{}\end{DoxyParamCaption})}
+
+
+
+Normalizes a raw value between 0 and 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw} & The raw sensor value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The normalized value. 
+\end{DoxyReturn}
+\Hypertarget{classline__sensor_1_1_line_sensor_a9c66d6fc8964768001ae963573b019fe}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!read\_raw@{read\_raw}}
+\index{read\_raw@{read\_raw}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{read\_raw()}{read\_raw()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_a9c66d6fc8964768001ae963573b019fe} 
+line\+\_\+sensor.\+Line\+Sensor.\+read\+\_\+raw (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads the raw sensor value. 
+
+\begin{DoxyReturn}{Returns}
+The raw ADC reading. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classline__sensor_1_1_line_sensor_aa2657fb59e466b261f86da5ab78823e7}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!adc@{adc}}
+\index{adc@{adc}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{adc}{adc}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_aa2657fb59e466b261f86da5ab78823e7} 
+line\+\_\+sensor.\+Line\+Sensor.\+adc = ADC(Pin(pin))}
+
+\Hypertarget{classline__sensor_1_1_line_sensor_aa628134b03ccb20ba18916e57a9a8b58}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!black@{black}}
+\index{black@{black}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{black}{black}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_aa628134b03ccb20ba18916e57a9a8b58} 
+line\+\_\+sensor.\+Line\+Sensor.\+black = black}
+
+\Hypertarget{classline__sensor_1_1_line_sensor_a97f34e5fc49d200f38a5ce9446621ef0}\index{line\_sensor.LineSensor@{line\_sensor.LineSensor}!white@{white}}
+\index{white@{white}!line\_sensor.LineSensor@{line\_sensor.LineSensor}}
+\doxysubsubsection{\texorpdfstring{white}{white}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_a97f34e5fc49d200f38a5ce9446621ef0} 
+line\+\_\+sensor.\+Line\+Sensor.\+white = white}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{line__sensor_8py}{line\+\_\+sensor.\+py}}\end{DoxyCompactItemize}

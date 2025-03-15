@@ -1,0 +1,255 @@
+\doxysection{imu.\+BNO055 Class Reference}
+\hypertarget{classimu_1_1_b_n_o055}{}\label{classimu_1_1_b_n_o055}\index{imu.BNO055@{imu.BNO055}}
+
+
+Class to interface with the \doxylink{classimu_1_1_b_n_o055}{BNO055} sensor.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a1ab0df343f67618e2961cca93801b67e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classimu_1_1_b_n_o055_a26950ae78cb5e823a3fa0f5b34adc2c7}{i2c}}, \mbox{\hyperlink{classimu_1_1_b_n_o055_a913252755961c7fa676d0a20d28efafd}{address}}=0x28)
+\begin{DoxyCompactList}\small\item\em Initializes the \doxylink{classimu_1_1_b_n_o055}{BNO055} sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_aa876e2b0252d190167e556c25597efcd}{set\+\_\+mode}} (self, mode)
+\begin{DoxyCompactList}\small\item\em Sets the operating mode of the sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_aa8ee38d282e6a16351798601daa23e56}{get\+\_\+calibration\+\_\+status}} (self)
+\begin{DoxyCompactList}\small\item\em Retrieves the calibration status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_ab4d62edce07eeddd687cbccb8da60945}{read\+\_\+calibration\+\_\+coefficients}} (self)
+\begin{DoxyCompactList}\small\item\em Reads the calibration coefficients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a4498bb752e8fba7b50417b202f073567}{write\+\_\+calibration\+\_\+coefficients}} (self, coeffs)
+\begin{DoxyCompactList}\small\item\em Writes calibration coefficients to the sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a95e2a29b27a70f6f2f98cd4df7a4d24d}{get\+Mag}} (self)
+\begin{DoxyCompactList}\small\item\em Reads magnetometer data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_aa55306fdfaad65c123e4c412725c2327}{get\+Accel}} (self)
+\begin{DoxyCompactList}\small\item\em Reads accelerometer data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_afd772986922f72fb3985cc1fd11f035a}{get\+Gyr}} (self)
+\begin{DoxyCompactList}\small\item\em Reads gyroscope data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a8c6ee0d67b4f21bb527e7ec0ad0f1b68}{get\+Euler}} (self)
+\begin{DoxyCompactList}\small\item\em Reads Euler angle data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a998cfb02d1a2134a08778135ffacecad}{save\+\_\+calibration\+\_\+to\+\_\+file}} (self, filename="{}calibration.\+bin"{})
+\begin{DoxyCompactList}\small\item\em Saves calibration data to a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a1cb7b2a264cba9f7758fff786ebb27f7}{load\+\_\+calibration\+\_\+from\+\_\+file}} (self, filename="{}calibration.\+bin"{})
+\begin{DoxyCompactList}\small\item\em Loads calibration data from a file and applies it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a265a631d367d4f61704fa969d0dc124a}{calibrate\+\_\+imu}} (self)
+\begin{DoxyCompactList}\small\item\em Calibrates the IMU sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a813c25ff23de1ff16cd5ab10f9354f1a}{set\+Center}} (self)
+\begin{DoxyCompactList}\small\item\em Sets the sensor\textquotesingle{}s center based on averaged Euler angle readings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a26950ae78cb5e823a3fa0f5b34adc2c7}{i2c}} = i2c
+\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a913252755961c7fa676d0a20d28efafd}{address}} = address
+\item 
+\mbox{\hyperlink{classimu_1_1_b_n_o055_a5aa980ce4e5a9e168ec93233ebe2479e}{center}} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to interface with the \doxylink{classimu_1_1_b_n_o055}{BNO055} sensor. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classimu_1_1_b_n_o055_a1ab0df343f67618e2961cca93801b67e}\index{imu.BNO055@{imu.BNO055}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a1ab0df343f67618e2961cca93801b67e} 
+imu.\+BNO055.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{i2c}{, }\item[{}]{address}{ = {\ttfamily 0x28}}\end{DoxyParamCaption})}
+
+
+
+Initializes the \doxylink{classimu_1_1_b_n_o055}{BNO055} sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c} & The I2C bus instance. \\
+\hline
+{\em address} & The I2C address (default is 0x28). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classimu_1_1_b_n_o055_a265a631d367d4f61704fa969d0dc124a}\index{imu.BNO055@{imu.BNO055}!calibrate\_imu@{calibrate\_imu}}
+\index{calibrate\_imu@{calibrate\_imu}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{calibrate\_imu()}{calibrate\_imu()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a265a631d367d4f61704fa969d0dc124a} 
+imu.\+BNO055.\+calibrate\+\_\+imu (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Calibrates the IMU sensor. 
+
+\Hypertarget{classimu_1_1_b_n_o055_aa8ee38d282e6a16351798601daa23e56}\index{imu.BNO055@{imu.BNO055}!get\_calibration\_status@{get\_calibration\_status}}
+\index{get\_calibration\_status@{get\_calibration\_status}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{get\_calibration\_status()}{get\_calibration\_status()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_aa8ee38d282e6a16351798601daa23e56} 
+imu.\+BNO055.\+get\+\_\+calibration\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the calibration status. 
+
+\begin{DoxyReturn}{Returns}
+A dictionary with calibration statuses for system, gyro, accel, and mag. 
+\end{DoxyReturn}
+\Hypertarget{classimu_1_1_b_n_o055_aa55306fdfaad65c123e4c412725c2327}\index{imu.BNO055@{imu.BNO055}!getAccel@{getAccel}}
+\index{getAccel@{getAccel}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{getAccel()}{getAccel()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_aa55306fdfaad65c123e4c412725c2327} 
+imu.\+BNO055.\+get\+Accel (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads accelerometer data. 
+
+\begin{DoxyReturn}{Returns}
+A tuple (accel\+\_\+x, accel\+\_\+y, accel\+\_\+z) or (0, 0, 0) on error. 
+\end{DoxyReturn}
+\Hypertarget{classimu_1_1_b_n_o055_a8c6ee0d67b4f21bb527e7ec0ad0f1b68}\index{imu.BNO055@{imu.BNO055}!getEuler@{getEuler}}
+\index{getEuler@{getEuler}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{getEuler()}{getEuler()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a8c6ee0d67b4f21bb527e7ec0ad0f1b68} 
+imu.\+BNO055.\+get\+Euler (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads Euler angle data. 
+
+\begin{DoxyReturn}{Returns}
+A tuple (euler\+\_\+x, euler\+\_\+y, euler\+\_\+z) or (0, 0, 0) on error. 
+\end{DoxyReturn}
+\Hypertarget{classimu_1_1_b_n_o055_afd772986922f72fb3985cc1fd11f035a}\index{imu.BNO055@{imu.BNO055}!getGyr@{getGyr}}
+\index{getGyr@{getGyr}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{getGyr()}{getGyr()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_afd772986922f72fb3985cc1fd11f035a} 
+imu.\+BNO055.\+get\+Gyr (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads gyroscope data. 
+
+\begin{DoxyReturn}{Returns}
+A tuple (gyr\+\_\+x, gyr\+\_\+y, gyr\+\_\+z) or (0, 0, 0) on error. 
+\end{DoxyReturn}
+\Hypertarget{classimu_1_1_b_n_o055_a95e2a29b27a70f6f2f98cd4df7a4d24d}\index{imu.BNO055@{imu.BNO055}!getMag@{getMag}}
+\index{getMag@{getMag}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{getMag()}{getMag()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a95e2a29b27a70f6f2f98cd4df7a4d24d} 
+imu.\+BNO055.\+get\+Mag (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads magnetometer data. 
+
+\begin{DoxyReturn}{Returns}
+A tuple (mag\+\_\+x, mag\+\_\+y, mag\+\_\+z) or (0, 0, 0) on error. 
+\end{DoxyReturn}
+\Hypertarget{classimu_1_1_b_n_o055_a1cb7b2a264cba9f7758fff786ebb27f7}\index{imu.BNO055@{imu.BNO055}!load\_calibration\_from\_file@{load\_calibration\_from\_file}}
+\index{load\_calibration\_from\_file@{load\_calibration\_from\_file}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{load\_calibration\_from\_file()}{load\_calibration\_from\_file()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a1cb7b2a264cba9f7758fff786ebb27f7} 
+imu.\+BNO055.\+load\+\_\+calibration\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{filename}{ = {\ttfamily "{}calibration.bin"{}}}\end{DoxyParamCaption})}
+
+
+
+Loads calibration data from a file and applies it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name (default "{}calibration.\+bin"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classimu_1_1_b_n_o055_ab4d62edce07eeddd687cbccb8da60945}\index{imu.BNO055@{imu.BNO055}!read\_calibration\_coefficients@{read\_calibration\_coefficients}}
+\index{read\_calibration\_coefficients@{read\_calibration\_coefficients}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{read\_calibration\_coefficients()}{read\_calibration\_coefficients()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_ab4d62edce07eeddd687cbccb8da60945} 
+imu.\+BNO055.\+read\+\_\+calibration\+\_\+coefficients (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads the calibration coefficients. 
+
+\begin{DoxyReturn}{Returns}
+A bytes object with calibration coefficients, or None on error. 
+\end{DoxyReturn}
+\Hypertarget{classimu_1_1_b_n_o055_a998cfb02d1a2134a08778135ffacecad}\index{imu.BNO055@{imu.BNO055}!save\_calibration\_to\_file@{save\_calibration\_to\_file}}
+\index{save\_calibration\_to\_file@{save\_calibration\_to\_file}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{save\_calibration\_to\_file()}{save\_calibration\_to\_file()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a998cfb02d1a2134a08778135ffacecad} 
+imu.\+BNO055.\+save\+\_\+calibration\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{filename}{ = {\ttfamily "{}calibration.bin"{}}}\end{DoxyParamCaption})}
+
+
+
+Saves calibration data to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name (default "{}calibration.\+bin"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classimu_1_1_b_n_o055_aa876e2b0252d190167e556c25597efcd}\index{imu.BNO055@{imu.BNO055}!set\_mode@{set\_mode}}
+\index{set\_mode@{set\_mode}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{set\_mode()}{set\_mode()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_aa876e2b0252d190167e556c25597efcd} 
+imu.\+BNO055.\+set\+\_\+mode (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Sets the operating mode of the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The desired operating mode. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classimu_1_1_b_n_o055_a813c25ff23de1ff16cd5ab10f9354f1a}\index{imu.BNO055@{imu.BNO055}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a813c25ff23de1ff16cd5ab10f9354f1a} 
+imu.\+BNO055.\+set\+Center (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Sets the sensor\textquotesingle{}s center based on averaged Euler angle readings. 
+
+\Hypertarget{classimu_1_1_b_n_o055_a4498bb752e8fba7b50417b202f073567}\index{imu.BNO055@{imu.BNO055}!write\_calibration\_coefficients@{write\_calibration\_coefficients}}
+\index{write\_calibration\_coefficients@{write\_calibration\_coefficients}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{write\_calibration\_coefficients()}{write\_calibration\_coefficients()}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a4498bb752e8fba7b50417b202f073567} 
+imu.\+BNO055.\+write\+\_\+calibration\+\_\+coefficients (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{coeffs}{}\end{DoxyParamCaption})}
+
+
+
+Writes calibration coefficients to the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coeffs} & A bytes-\/like object containing the calibration coefficients. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classimu_1_1_b_n_o055_a913252755961c7fa676d0a20d28efafd}\index{imu.BNO055@{imu.BNO055}!address@{address}}
+\index{address@{address}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a913252755961c7fa676d0a20d28efafd} 
+imu.\+BNO055.\+address = address}
+
+\Hypertarget{classimu_1_1_b_n_o055_a5aa980ce4e5a9e168ec93233ebe2479e}\index{imu.BNO055@{imu.BNO055}!center@{center}}
+\index{center@{center}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{center}{center}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a5aa980ce4e5a9e168ec93233ebe2479e} 
+imu.\+BNO055.\+center = None}
+
+\Hypertarget{classimu_1_1_b_n_o055_a26950ae78cb5e823a3fa0f5b34adc2c7}\index{imu.BNO055@{imu.BNO055}!i2c@{i2c}}
+\index{i2c@{i2c}!imu.BNO055@{imu.BNO055}}
+\doxysubsubsection{\texorpdfstring{i2c}{i2c}}
+{\footnotesize\ttfamily \label{classimu_1_1_b_n_o055_a26950ae78cb5e823a3fa0f5b34adc2c7} 
+imu.\+BNO055.\+i2c = i2c}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{imu_8py}{imu.\+py}}\end{DoxyCompactItemize}

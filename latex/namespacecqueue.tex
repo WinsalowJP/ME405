@@ -1,0 +1,134 @@
+\doxysection{cqueue Namespace Reference}
+\hypertarget{namespacecqueue}{}\label{namespacecqueue}\index{cqueue@{cqueue}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcqueue_1_1_byte_queue}{Byte\+Queue}}
+\begin{DoxyCompactList}\small\item\em A fast, pre-\/allocated queue of characters for Micro\+Python. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classcqueue_1_1_float_queue}{Float\+Queue}}
+\begin{DoxyCompactList}\small\item\em A fast, pre-\/allocated queue of floats for Micro\+Python. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classcqueue_1_1_int_queue}{Int\+Queue}}
+\begin{DoxyCompactList}\small\item\em A fast, pre-\/allocated queue of integers for Micro\+Python. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecqueue_a226579f767b49bf4eb1bef7202d9d614}{main}} ()
+\begin{DoxyCompactList}\small\item\em Run a test by creating queues, putting numbers into the queues, getting the numbers back out, and checking for consistency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacecqueue_a813d58dc240ac993243e717c59137757}{TEST\+\_\+\+SIZE}} = 3000
+\begin{DoxyCompactList}\small\item\em The number of times to call put() for each queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecqueue_a7833170ad67c37b3fb9790f193728881}{NUM\+\_\+\+QUEUE\+\_\+\+SIZE}} = 2000
+\begin{DoxyCompactList}\small\item\em The number of elements in each queue which we create and test. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecqueue_ab369103f3b5d711b92e37437004a5778}{BYTE\+\_\+\+QUEUE\+\_\+\+SIZE}} = 20
+\begin{DoxyCompactList}\small\item\em The number of characters in the test byte queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecqueue_a967f4d8a1d43daf8ac53de56851b8eee}{BYTE\+\_\+\+T\+\_\+\+SIZE}} = 94
+\begin{DoxyCompactList}\small\item\em The number of times we try to put something into the byte queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecqueue_a0bf6be0a3db139468dc72bd63b76f66b}{NUM\+\_\+\+RUNS}} = 25
+\begin{DoxyCompactList}\small\item\em The number of times we repeat the whole test. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespacecqueue_a6f8bcd32d5a0c907d1fba8eaf800f7b5}{overall}}
+\begin{DoxyCompactList}\small\item\em The results of running tests repeatedly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacecqueue_a31e7ec14cb0f45e93a465de3b2b6879e}{end}}
+\item 
+\mbox{\hyperlink{namespacecqueue_a11aeba072079e527eb6357127d956018}{booq}} = \mbox{\hyperlink{classcqueue_1_1_byte_queue}{cqueue.\+Byte\+Queue}}(10)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecqueue_a226579f767b49bf4eb1bef7202d9d614}\index{cqueue@{cqueue}!main@{main}}
+\index{main@{main}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{namespacecqueue_a226579f767b49bf4eb1bef7202d9d614} 
+cqueue.\+main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Run a test by creating queues, putting numbers into the queues, getting the numbers back out, and checking for consistency. 
+
+While we\textquotesingle{}re at it, keep track of the time it took to put things into the queues, as this can be important if putting data into a queue within an interrupt callback. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacecqueue_a11aeba072079e527eb6357127d956018}\index{cqueue@{cqueue}!booq@{booq}}
+\index{booq@{booq}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{booq}{booq}}
+{\footnotesize\ttfamily \label{namespacecqueue_a11aeba072079e527eb6357127d956018} 
+cqueue.\+booq = \mbox{\hyperlink{classcqueue_1_1_byte_queue}{cqueue.\+Byte\+Queue}}(10)}
+
+\Hypertarget{namespacecqueue_ab369103f3b5d711b92e37437004a5778}\index{cqueue@{cqueue}!BYTE\_QUEUE\_SIZE@{BYTE\_QUEUE\_SIZE}}
+\index{BYTE\_QUEUE\_SIZE@{BYTE\_QUEUE\_SIZE}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{BYTE\_QUEUE\_SIZE}{BYTE\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \label{namespacecqueue_ab369103f3b5d711b92e37437004a5778} 
+int cqueue.\+BYTE\+\_\+\+QUEUE\+\_\+\+SIZE = 20}
+
+
+
+The number of characters in the test byte queue. 
+
+\Hypertarget{namespacecqueue_a967f4d8a1d43daf8ac53de56851b8eee}\index{cqueue@{cqueue}!BYTE\_T\_SIZE@{BYTE\_T\_SIZE}}
+\index{BYTE\_T\_SIZE@{BYTE\_T\_SIZE}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{BYTE\_T\_SIZE}{BYTE\_T\_SIZE}}
+{\footnotesize\ttfamily \label{namespacecqueue_a967f4d8a1d43daf8ac53de56851b8eee} 
+int cqueue.\+BYTE\+\_\+\+T\+\_\+\+SIZE = 94}
+
+
+
+The number of times we try to put something into the byte queue. 
+
+It\textquotesingle{}s kept somewhat small so we\textquotesingle{}re putting in printable ASCII characters \Hypertarget{namespacecqueue_a31e7ec14cb0f45e93a465de3b2b6879e}\index{cqueue@{cqueue}!end@{end}}
+\index{end@{end}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \label{namespacecqueue_a31e7ec14cb0f45e93a465de3b2b6879e} 
+cqueue.\+end}
+
+\Hypertarget{namespacecqueue_a7833170ad67c37b3fb9790f193728881}\index{cqueue@{cqueue}!NUM\_QUEUE\_SIZE@{NUM\_QUEUE\_SIZE}}
+\index{NUM\_QUEUE\_SIZE@{NUM\_QUEUE\_SIZE}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{NUM\_QUEUE\_SIZE}{NUM\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \label{namespacecqueue_a7833170ad67c37b3fb9790f193728881} 
+int cqueue.\+NUM\+\_\+\+QUEUE\+\_\+\+SIZE = 2000}
+
+
+
+The number of elements in each queue which we create and test. 
+
+\Hypertarget{namespacecqueue_a0bf6be0a3db139468dc72bd63b76f66b}\index{cqueue@{cqueue}!NUM\_RUNS@{NUM\_RUNS}}
+\index{NUM\_RUNS@{NUM\_RUNS}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{NUM\_RUNS}{NUM\_RUNS}}
+{\footnotesize\ttfamily \label{namespacecqueue_a0bf6be0a3db139468dc72bd63b76f66b} 
+int cqueue.\+NUM\+\_\+\+RUNS = 25}
+
+
+
+The number of times we repeat the whole test. 
+
+\Hypertarget{namespacecqueue_a6f8bcd32d5a0c907d1fba8eaf800f7b5}\index{cqueue@{cqueue}!overall@{overall}}
+\index{overall@{overall}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{overall}{overall}}
+{\footnotesize\ttfamily \label{namespacecqueue_a6f8bcd32d5a0c907d1fba8eaf800f7b5} 
+dict cqueue.\+overall}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{\textcolor{stringliteral}{"{}Int\ Sum"{}}\ \ \ :\ 0,}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Int\ Max"{}}\ \ \ :\ 0,}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Float\ Sum"{}}\ :\ 0,}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Float\ Max"{}}\ :\ 0,}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Byte\ Sum"{}}\ \ :\ 0,}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Byte\ Max"{}}\ \ :\ 0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The results of running tests repeatedly. 
+
+\Hypertarget{namespacecqueue_a813d58dc240ac993243e717c59137757}\index{cqueue@{cqueue}!TEST\_SIZE@{TEST\_SIZE}}
+\index{TEST\_SIZE@{TEST\_SIZE}!cqueue@{cqueue}}
+\doxysubsubsection{\texorpdfstring{TEST\_SIZE}{TEST\_SIZE}}
+{\footnotesize\ttfamily \label{namespacecqueue_a813d58dc240ac993243e717c59137757} 
+int cqueue.\+TEST\+\_\+\+SIZE = 3000}
+
+
+
+The number of times to call put() for each queue. 
+

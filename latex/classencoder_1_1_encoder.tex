@@ -1,0 +1,189 @@
+\doxysection{encoder.\+Encoder Class Reference}
+\hypertarget{classencoder_1_1_encoder}{}\label{classencoder_1_1_encoder}\index{encoder.Encoder@{encoder.Encoder}}
+
+
+Class to manage an encoder.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_a2e52fdaba61b82c32c4e3d737a4d4c40}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classencoder_1_1_encoder_a6d34277d78f0f528aeb8b4d8901356b7}{tim}}, ch\+A\+\_\+pin, ch\+B\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Initializes the encoder with a timer and two channel pins. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_aa49b0c5f3a84989bbd9500f1d25f81aa}{update}} (self)
+\begin{DoxyCompactList}\small\item\em Updates the encoder reading and computes position and velocity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_a5e1f45bde021fbdb806bfda8a17ded47}{get\+\_\+position}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current linear position in millimeters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_a5f5175f8d031309051acea0f25710e3d}{get\+\_\+velocity}} (self)
+\begin{DoxyCompactList}\small\item\em Calculates and returns the current velocity in mm/s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_ab79017405d71f96cb2363307a1f04c88}{zero}} (self)
+\begin{DoxyCompactList}\small\item\em Resets the encoder position to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_a6d34277d78f0f528aeb8b4d8901356b7}{tim}} = Timer(tim, period=0x\+FFFF, prescaler=0)
+\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_a8a6c252ededbb8cff1a29c6ef1d70683}{position}} = 0
+\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_ae53a3f480c7e6f8eee2649b58c052ae6}{prev\+\_\+count}} = self.\+tim.\+counter()
+\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_ad3c110d78ce1b5e97ce08efd20b41040}{delta}} = 0
+\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_aa6c60def8af928ad3d55a959755a657d}{dt}} = 1
+\item 
+\mbox{\hyperlink{classencoder_1_1_encoder_af9ca104df590d6508b1131c0853aec5a}{prev\+\_\+time}} = time.\+ticks\+\_\+us()
+\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_aa508a46463ab0dfdac690182b71358ce}{wheel\+\_\+cpr}} = 1440
+\begin{DoxyCompactList}\small\item\em \doxylink{classencoder_1_1_encoder}{Encoder} scaling parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_ad4f76753040b82f44286f7f5e1112006}{wheel\+\_\+radius\+\_\+mm}} = 36
+\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_a65d1783ac59d312658962b6937f03aac}{wheel\+\_\+circumference\+\_\+mm}} = 2 \texorpdfstring{$\ast$}{*} 3.\+1416 \texorpdfstring{$\ast$}{*} self.\+wheel\+\_\+radius\+\_\+mm
+\item 
+int \mbox{\hyperlink{classencoder_1_1_encoder_ac0bcb8a5e4639e3eeba8f57e48383d8b}{mm\+\_\+per\+\_\+tick}} = self.\+wheel\+\_\+circumference\+\_\+mm / self.\+wheel\+\_\+cpr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to manage an encoder. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classencoder_1_1_encoder_a2e52fdaba61b82c32c4e3d737a4d4c40}\index{encoder.Encoder@{encoder.Encoder}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_a2e52fdaba61b82c32c4e3d737a4d4c40} 
+encoder.\+Encoder.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{tim}{, }\item[{}]{ch\+A\+\_\+pin}{, }\item[{}]{ch\+B\+\_\+pin}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the encoder with a timer and two channel pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer number. \\
+\hline
+{\em ch\+A\+\_\+pin} & The pin for channel A. \\
+\hline
+{\em ch\+B\+\_\+pin} & The pin for channel B. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classencoder_1_1_encoder_a5e1f45bde021fbdb806bfda8a17ded47}\index{encoder.Encoder@{encoder.Encoder}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_a5e1f45bde021fbdb806bfda8a17ded47} 
+encoder.\+Encoder.\+get\+\_\+position (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current linear position in millimeters. 
+
+\begin{DoxyReturn}{Returns}
+The position in mm. 
+\end{DoxyReturn}
+\Hypertarget{classencoder_1_1_encoder_a5f5175f8d031309051acea0f25710e3d}\index{encoder.Encoder@{encoder.Encoder}!get\_velocity@{get\_velocity}}
+\index{get\_velocity@{get\_velocity}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{get\_velocity()}{get\_velocity()}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_a5f5175f8d031309051acea0f25710e3d} 
+encoder.\+Encoder.\+get\+\_\+velocity (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Calculates and returns the current velocity in mm/s. 
+
+\begin{DoxyReturn}{Returns}
+Velocity in mm/s. 
+\end{DoxyReturn}
+\Hypertarget{classencoder_1_1_encoder_aa49b0c5f3a84989bbd9500f1d25f81aa}\index{encoder.Encoder@{encoder.Encoder}!update@{update}}
+\index{update@{update}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_aa49b0c5f3a84989bbd9500f1d25f81aa} 
+encoder.\+Encoder.\+update (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Updates the encoder reading and computes position and velocity. 
+
+\Hypertarget{classencoder_1_1_encoder_ab79017405d71f96cb2363307a1f04c88}\index{encoder.Encoder@{encoder.Encoder}!zero@{zero}}
+\index{zero@{zero}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_ab79017405d71f96cb2363307a1f04c88} 
+encoder.\+Encoder.\+zero (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Resets the encoder position to zero. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classencoder_1_1_encoder_ad3c110d78ce1b5e97ce08efd20b41040}\index{encoder.Encoder@{encoder.Encoder}!delta@{delta}}
+\index{delta@{delta}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_ad3c110d78ce1b5e97ce08efd20b41040} 
+int encoder.\+Encoder.\+delta = 0}
+
+\Hypertarget{classencoder_1_1_encoder_aa6c60def8af928ad3d55a959755a657d}\index{encoder.Encoder@{encoder.Encoder}!dt@{dt}}
+\index{dt@{dt}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_aa6c60def8af928ad3d55a959755a657d} 
+int encoder.\+Encoder.\+dt = 1}
+
+\Hypertarget{classencoder_1_1_encoder_ac0bcb8a5e4639e3eeba8f57e48383d8b}\index{encoder.Encoder@{encoder.Encoder}!mm\_per\_tick@{mm\_per\_tick}}
+\index{mm\_per\_tick@{mm\_per\_tick}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{mm\_per\_tick}{mm\_per\_tick}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_ac0bcb8a5e4639e3eeba8f57e48383d8b} 
+encoder.\+Encoder.\+mm\+\_\+per\+\_\+tick = self.\+wheel\+\_\+circumference\+\_\+mm / self.\+wheel\+\_\+cpr}
+
+\Hypertarget{classencoder_1_1_encoder_a8a6c252ededbb8cff1a29c6ef1d70683}\index{encoder.Encoder@{encoder.Encoder}!position@{position}}
+\index{position@{position}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_a8a6c252ededbb8cff1a29c6ef1d70683} 
+int encoder.\+Encoder.\+position = 0}
+
+\Hypertarget{classencoder_1_1_encoder_ae53a3f480c7e6f8eee2649b58c052ae6}\index{encoder.Encoder@{encoder.Encoder}!prev\_count@{prev\_count}}
+\index{prev\_count@{prev\_count}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{prev\_count}{prev\_count}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_ae53a3f480c7e6f8eee2649b58c052ae6} 
+encoder.\+Encoder.\+prev\+\_\+count = self.\+tim.\+counter()}
+
+\Hypertarget{classencoder_1_1_encoder_af9ca104df590d6508b1131c0853aec5a}\index{encoder.Encoder@{encoder.Encoder}!prev\_time@{prev\_time}}
+\index{prev\_time@{prev\_time}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{prev\_time}{prev\_time}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_af9ca104df590d6508b1131c0853aec5a} 
+encoder.\+Encoder.\+prev\+\_\+time = time.\+ticks\+\_\+us()}
+
+\Hypertarget{classencoder_1_1_encoder_a6d34277d78f0f528aeb8b4d8901356b7}\index{encoder.Encoder@{encoder.Encoder}!tim@{tim}}
+\index{tim@{tim}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{tim}{tim}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_a6d34277d78f0f528aeb8b4d8901356b7} 
+encoder.\+Encoder.\+tim = Timer(tim, period=0x\+FFFF, prescaler=0)}
+
+\Hypertarget{classencoder_1_1_encoder_a65d1783ac59d312658962b6937f03aac}\index{encoder.Encoder@{encoder.Encoder}!wheel\_circumference\_mm@{wheel\_circumference\_mm}}
+\index{wheel\_circumference\_mm@{wheel\_circumference\_mm}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{wheel\_circumference\_mm}{wheel\_circumference\_mm}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_a65d1783ac59d312658962b6937f03aac} 
+int encoder.\+Encoder.\+wheel\+\_\+circumference\+\_\+mm = 2 \texorpdfstring{$\ast$}{*} 3.\+1416 \texorpdfstring{$\ast$}{*} self.\+wheel\+\_\+radius\+\_\+mm}
+
+\Hypertarget{classencoder_1_1_encoder_aa508a46463ab0dfdac690182b71358ce}\index{encoder.Encoder@{encoder.Encoder}!wheel\_cpr@{wheel\_cpr}}
+\index{wheel\_cpr@{wheel\_cpr}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{wheel\_cpr}{wheel\_cpr}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_aa508a46463ab0dfdac690182b71358ce} 
+int encoder.\+Encoder.\+wheel\+\_\+cpr = 1440}
+
+
+
+\doxylink{classencoder_1_1_encoder}{Encoder} scaling parameters. 
+
+\Hypertarget{classencoder_1_1_encoder_ad4f76753040b82f44286f7f5e1112006}\index{encoder.Encoder@{encoder.Encoder}!wheel\_radius\_mm@{wheel\_radius\_mm}}
+\index{wheel\_radius\_mm@{wheel\_radius\_mm}!encoder.Encoder@{encoder.Encoder}}
+\doxysubsubsection{\texorpdfstring{wheel\_radius\_mm}{wheel\_radius\_mm}}
+{\footnotesize\ttfamily \label{classencoder_1_1_encoder_ad4f76753040b82f44286f7f5e1112006} 
+int encoder.\+Encoder.\+wheel\+\_\+radius\+\_\+mm = 36}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{encoder_8py}{encoder.\+py}}\end{DoxyCompactItemize}

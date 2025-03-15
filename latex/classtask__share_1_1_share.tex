@@ -1,0 +1,193 @@
+\doxysection{task\+\_\+share.\+Share Class Reference}
+\hypertarget{classtask__share_1_1_share}{}\label{classtask__share_1_1_share}\index{task\_share.Share@{task\_share.Share}}
+
+
+An item which holds data to be shared between tasks.  
+
+
+Inheritance diagram for task\+\_\+share.\+Share\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__share_1_1_share}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_share_ad8263aa134dc9fa17abb7f751240f092}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, type\+\_\+code, thread\+\_\+protect=True, name=None)
+\begin{DoxyCompactList}\small\item\em Create a shared data item used to transfer data between tasks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_share_a6bca473510fc2d28f5b7a32f242e4e18}{put}} (self, data, in\+\_\+\+ISR=False)
+\begin{DoxyCompactList}\small\item\em Write an item of data into the share. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_share_ae5e4a0e21b274c9a76b80b8bb5eb62d3}{get}} (self, in\+\_\+\+ISR=False)
+\begin{DoxyCompactList}\small\item\em Read an item of data from the share. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_share_ae764d854ffc31037a37f89211128eb98}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Puts diagnostic information about the share into a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtask__share_1_1_base_share}{task\+\_\+share.\+Base\+Share}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_base_share_ad8079b40800179be6c58aaac9abb0e26}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, type\+\_\+code, thread\+\_\+protect=True, name=None)
+\begin{DoxyCompactList}\small\item\em Create a base queue object when called by a child class initializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classtask__share_1_1_share_a2e8df029af46fbfd44ef0c2e7e8c7af6}{ser\+\_\+num}} = 0
+\begin{DoxyCompactList}\small\item\em A counter used to give serial numbers to shares for diagnostic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_share_a2f7e0b72d08d27b7ccf92da6ddc127a8}{\+\_\+buffer}} = array.\+array (type\+\_\+code, \mbox{[}0\mbox{]})
+\item 
+str \mbox{\hyperlink{classtask__share_1_1_share_acff3918997966ba1e31292398f3ca196}{\+\_\+name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtask__share_1_1_base_share}{task\+\_\+share.\+Base\+Share}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_base_share_a0e45276424d1600740942b82f216c649}{\+\_\+type\+\_\+code}} = type\+\_\+code
+\item 
+\mbox{\hyperlink{classtask__share_1_1_base_share_acf1741d88ede8f82b9c5f321a92aaa5e}{\+\_\+thread\+\_\+protect}} = thread\+\_\+protect
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An item which holds data to be shared between tasks. 
+
+This class implements a shared data item which can be protected against data corruption by pre-\/emptive multithreading. Multithreading which can corrupt shared data includes the use of ordinary interrupts as well as the use of pre-\/emptive multithreading such as by a Real-\/\+Time Operating System (RTOS).
+
+An example of the creation and use of a share is as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ task\_share}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ This\ share\ holds\ a\ signed\ short\ (16-\/bit)\ integer}}
+\DoxyCodeLine{my\_share\ =\ \mbox{\hyperlink{classtask__share_1_1_queue}{task\_share.Queue}}\ (\textcolor{stringliteral}{'h'},\ name=\textcolor{stringliteral}{"{}My\ Share"{}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Somewhere\ in\ one\ task,\ put\ data\ into\ the\ share}}
+\DoxyCodeLine{my\_share.put\ (some\_data)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ In\ another\ task,\ read\ data\ from\ the\ share}}
+\DoxyCodeLine{something\ =\ my\_share.get\ ()}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtask__share_1_1_share_ad8263aa134dc9fa17abb7f751240f092}\index{task\_share.Share@{task\_share.Share}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_ad8263aa134dc9fa17abb7f751240f092} 
+task\+\_\+share.\+Share.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{type\+\_\+code}{, }\item[{}]{thread\+\_\+protect}{ = {\ttfamily True}, }\item[{}]{name}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+
+
+Create a shared data item used to transfer data between tasks. 
+
+This method allocates memory in which the shared data will be buffered.
+
+Each share can only carry data of one particular type which must be chosen from the following list. The data type is specified by a one-\/letter type code which is given as for the Python {\ttfamily array.\+array} type, which can be any of the following\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-3}
+\endhead
+{\bfseries{b}} (signed char)   &{\bfseries{B}} (unsigned char)   &8 bit integers    \\\cline{1-3}
+{\bfseries{h}} (signed short)   &{\bfseries{H}} (unsigned short)   &16 bit integers    \\\cline{1-3}
+{\bfseries{i}} (signed int)   &{\bfseries{I}} (unsigned int)   &32 bit integers (probably)    \\\cline{1-3}
+{\bfseries{l}} (signed long)   &{\bfseries{L}} (unsigned long)   &32 bit integers    \\\cline{1-3}
+{\bfseries{q}} (signed long long)   &{\bfseries{Q}} (unsigned long long)   &64 bit integers    \\\cline{1-3}
+{\bfseries{f}} (float)   &{\bfseries{d}} (double-\/precision float)   &\\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+code} & The type of data items which the share can hold \\
+\hline
+{\em thread\+\_\+protect} & True if mutual exclusion protection is used \\
+\hline
+{\em name} & A short name for the share, default {\ttfamily ShareN} where {\ttfamily N} is a serial number for the share \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtask__share_1_1_share_ae764d854ffc31037a37f89211128eb98}\index{task\_share.Share@{task\_share.Share}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_ae764d854ffc31037a37f89211128eb98} 
+task\+\_\+share.\+Share.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Puts diagnostic information about the share into a string. 
+
+Shares are pretty simple, so we just put the name and type. \Hypertarget{classtask__share_1_1_share_ae5e4a0e21b274c9a76b80b8bb5eb62d3}\index{task\_share.Share@{task\_share.Share}!get@{get}}
+\index{get@{get}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_ae5e4a0e21b274c9a76b80b8bb5eb62d3} 
+task\+\_\+share.\+Share.\+get (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{in\+\_\+\+ISR}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+
+
+Read an item of data from the share. 
+
+If thread protection is enabled, interrupts are disabled during the time that the data is being read so as to prevent data corruption by changes in the data as it is being read. 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+\+ISR} & Set this to True if calling from within an ISR \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtask__share_1_1_share_a6bca473510fc2d28f5b7a32f242e4e18}\index{task\_share.Share@{task\_share.Share}!put@{put}}
+\index{put@{put}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_a6bca473510fc2d28f5b7a32f242e4e18} 
+task\+\_\+share.\+Share.\+put (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{data}{, }\item[{}]{in\+\_\+\+ISR}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+
+
+Write an item of data into the share. 
+
+This method puts data into the share; any old data is overwritten. This code disables interrupts during the writing so as to prevent data corrupting by an interrupt service routine which might access the same data. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be put into this share \\
+\hline
+{\em in\+\_\+\+ISR} & Set this to True if calling from within an ISR \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtask__share_1_1_share_a2f7e0b72d08d27b7ccf92da6ddc127a8}\index{task\_share.Share@{task\_share.Share}!\_buffer@{\_buffer}}
+\index{\_buffer@{\_buffer}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{\_buffer}{\_buffer}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_a2f7e0b72d08d27b7ccf92da6ddc127a8} 
+task\+\_\+share.\+Share.\+\_\+buffer = array.\+array (type\+\_\+code, \mbox{[}0\mbox{]})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_share_acff3918997966ba1e31292398f3ca196}\index{task\_share.Share@{task\_share.Share}!\_name@{\_name}}
+\index{\_name@{\_name}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{\_name}{\_name}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_acff3918997966ba1e31292398f3ca196} 
+task\+\_\+share.\+Share.\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \textcolor{keywordtype}{None}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{stringliteral}{'Share'}\ +\ str\ (Share.ser\_num)}
+
+\end{DoxyCode}
+\Hypertarget{classtask__share_1_1_share_a2e8df029af46fbfd44ef0c2e7e8c7af6}\index{task\_share.Share@{task\_share.Share}!ser\_num@{ser\_num}}
+\index{ser\_num@{ser\_num}!task\_share.Share@{task\_share.Share}}
+\doxysubsubsection{\texorpdfstring{ser\_num}{ser\_num}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_share_a2e8df029af46fbfd44ef0c2e7e8c7af6} 
+int task\+\_\+share.\+Share.\+ser\+\_\+num = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A counter used to give serial numbers to shares for diagnostic use. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{task__share_8py}{task\+\_\+share.\+py}}\end{DoxyCompactItemize}

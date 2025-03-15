@@ -1,0 +1,173 @@
+\doxysection{line\+\_\+sensor.\+Line\+Sensor\+Array Class Reference}
+\hypertarget{classline__sensor_1_1_line_sensor_array}{}\label{classline__sensor_1_1_line_sensor_array}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+
+
+Manages an array of line sensors.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_ac284684c19b95b049540b28bd7f6bda5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, pin\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Initializes the \doxylink{classline__sensor_1_1_line_sensor_array}{Line\+Sensor\+Array}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_aaf40f6b72032571e385d825ffa768da8}{calibrate}} (self, samples=50, delay\+\_\+ms=20)
+\begin{DoxyCompactList}\small\item\em Calibrates all sensors over a series of samples. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_aa33db88ef099f1735efc0bcb9b9a616c}{read\+\_\+raw}} (self)
+\begin{DoxyCompactList}\small\item\em Reads raw values from all sensors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_aa291d5876737818abf8efdb2fd6e46ab}{get\+\_\+normalized\+\_\+values}} (self)
+\begin{DoxyCompactList}\small\item\em Gets normalized sensor values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_af9c4825f6630982928bef63c85b4812c}{compute\+\_\+centroid}} (self)
+\begin{DoxyCompactList}\small\item\em Computes the centroid of the detected line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_aab50925d8c5724fefa7ebe30a10ac4ce}{line\+\_\+detected}} (self, threshold, min\+\_\+active)
+\begin{DoxyCompactList}\small\item\em Determines if a line is detected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_a6a36260986642abfd435fc4391de8020}{save\+\_\+calibration}} (self)
+\begin{DoxyCompactList}\small\item\em Saves calibration data to a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_a52b3b5e4afeb701542c4e0f040b0b0b0}{load\+\_\+calibration}} (self)
+\begin{DoxyCompactList}\small\item\em Loads calibration data from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_a8f8dff251a34d2638eb01f5b7028205b}{sensors}} = \mbox{[}\mbox{\hyperlink{classline__sensor_1_1_line_sensor}{Line\+Sensor}}(pin) for pin in pin\+\_\+list\mbox{]}
+\item 
+str \mbox{\hyperlink{classline__sensor_1_1_line_sensor_array_a89de4d991ed2f38f878598829df35187}{calibration\+\_\+file}} = "{}line\+\_\+calibration.\+txt"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages an array of line sensors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_ac284684c19b95b049540b28bd7f6bda5}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_ac284684c19b95b049540b28bd7f6bda5} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pin\+\_\+list}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the \doxylink{classline__sensor_1_1_line_sensor_array}{Line\+Sensor\+Array}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+list} & A list of ADC pin identifiers for each sensor. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_aaf40f6b72032571e385d825ffa768da8}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_aaf40f6b72032571e385d825ffa768da8} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+calibrate (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{samples}{ = {\ttfamily 50}, }\item[{}]{delay\+\_\+ms}{ = {\ttfamily 20}}\end{DoxyParamCaption})}
+
+
+
+Calibrates all sensors over a series of samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Number of samples to take. \\
+\hline
+{\em delay\+\_\+ms} & Delay between samples in milliseconds. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_af9c4825f6630982928bef63c85b4812c}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!compute\_centroid@{compute\_centroid}}
+\index{compute\_centroid@{compute\_centroid}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{compute\_centroid()}{compute\_centroid()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_af9c4825f6630982928bef63c85b4812c} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+compute\+\_\+centroid (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Computes the centroid of the detected line. 
+
+\begin{DoxyReturn}{Returns}
+The computed centroid value. 
+\end{DoxyReturn}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_aa291d5876737818abf8efdb2fd6e46ab}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!get\_normalized\_values@{get\_normalized\_values}}
+\index{get\_normalized\_values@{get\_normalized\_values}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{get\_normalized\_values()}{get\_normalized\_values()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_aa291d5876737818abf8efdb2fd6e46ab} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+get\+\_\+normalized\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Gets normalized sensor values. 
+
+\begin{DoxyReturn}{Returns}
+A list of normalized sensor values. 
+\end{DoxyReturn}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_aab50925d8c5724fefa7ebe30a10ac4ce}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!line\_detected@{line\_detected}}
+\index{line\_detected@{line\_detected}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{line\_detected()}{line\_detected()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_aab50925d8c5724fefa7ebe30a10ac4ce} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+line\+\_\+detected (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{threshold}{, }\item[{}]{min\+\_\+active}{}\end{DoxyParamCaption})}
+
+
+
+Determines if a line is detected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & Normalized threshold value. \\
+\hline
+{\em min\+\_\+active} & Minimum number of sensors that must be active. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a line is detected, False otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_a52b3b5e4afeb701542c4e0f040b0b0b0}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!load\_calibration@{load\_calibration}}
+\index{load\_calibration@{load\_calibration}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{load\_calibration()}{load\_calibration()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_a52b3b5e4afeb701542c4e0f040b0b0b0} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+load\+\_\+calibration (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Loads calibration data from a file. 
+
+\Hypertarget{classline__sensor_1_1_line_sensor_array_aa33db88ef099f1735efc0bcb9b9a616c}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!read\_raw@{read\_raw}}
+\index{read\_raw@{read\_raw}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{read\_raw()}{read\_raw()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_aa33db88ef099f1735efc0bcb9b9a616c} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+read\+\_\+raw (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Reads raw values from all sensors. 
+
+\begin{DoxyReturn}{Returns}
+A list of raw sensor readings. 
+\end{DoxyReturn}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_a6a36260986642abfd435fc4391de8020}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!save\_calibration@{save\_calibration}}
+\index{save\_calibration@{save\_calibration}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{save\_calibration()}{save\_calibration()}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_a6a36260986642abfd435fc4391de8020} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+save\+\_\+calibration (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Saves calibration data to a file. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classline__sensor_1_1_line_sensor_array_a89de4d991ed2f38f878598829df35187}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!calibration\_file@{calibration\_file}}
+\index{calibration\_file@{calibration\_file}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{calibration\_file}{calibration\_file}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_a89de4d991ed2f38f878598829df35187} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+calibration\+\_\+file = "{}line\+\_\+calibration.\+txt"{}}
+
+\Hypertarget{classline__sensor_1_1_line_sensor_array_a8f8dff251a34d2638eb01f5b7028205b}\index{line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}!sensors@{sensors}}
+\index{sensors@{sensors}!line\_sensor.LineSensorArray@{line\_sensor.LineSensorArray}}
+\doxysubsubsection{\texorpdfstring{sensors}{sensors}}
+{\footnotesize\ttfamily \label{classline__sensor_1_1_line_sensor_array_a8f8dff251a34d2638eb01f5b7028205b} 
+line\+\_\+sensor.\+Line\+Sensor\+Array.\+sensors = \mbox{[}\mbox{\hyperlink{classline__sensor_1_1_line_sensor}{Line\+Sensor}}(pin) for pin in pin\+\_\+list\mbox{]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{line__sensor_8py}{line\+\_\+sensor.\+py}}\end{DoxyCompactItemize}

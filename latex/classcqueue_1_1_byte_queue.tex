@@ -1,0 +1,160 @@
+\doxysection{cqueue.\+Byte\+Queue Class Reference}
+\hypertarget{classcqueue_1_1_byte_queue}{}\label{classcqueue_1_1_byte_queue}\index{cqueue.ByteQueue@{cqueue.ByteQueue}}
+
+
+A fast, pre-\/allocated queue of characters for Micro\+Python.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcqueue_1_1_byte_queue_adbcb4ca11ece515a3ef5aa0aa3efd9bd}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, int size)
+\begin{DoxyCompactList}\small\item\em Create a fast queue for characters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcqueue_1_1_byte_queue_a8cc8d6604d0310383ee124bd6f17166f}{any}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are any items available in the queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcqueue_1_1_byte_queue_aedf4a633af912504f57cb13136a2f586}{available}} ()
+\begin{DoxyCompactList}\small\item\em Checks how many items are available to be read from the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcqueue_1_1_byte_queue_a36ba763a09f87c26a3a3ccadea6657f7}{put}} (int data)
+\begin{DoxyCompactList}\small\item\em Put a character or string into the queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcqueue_1_1_byte_queue_a9bb8c9ce369431e40f3862613677637b}{get}} ()
+\begin{DoxyCompactList}\small\item\em Get an item from the queue if one is available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcqueue_1_1_byte_queue_a156857b152f0b88d5c2e46b7a292d099}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Empty the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcqueue_1_1_byte_queue_afe2f1d5961475554f9ff98192c1dcc57}{full}} ()
+\begin{DoxyCompactList}\small\item\em Check whether the queue is currently full. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcqueue_1_1_byte_queue_aa5defe1d3f368a8b60f13d4f86a400ba}{max\+\_\+full}} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum number of unread items that have been in the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A fast, pre-\/allocated queue of characters for Micro\+Python. 
+
+Either bytes or Unicode (str) characters may be written into a \doxylink{classcqueue_1_1_byte_queue}{Byte\+Queue}; only bytes will be stored and retrieved from it. This class is written in C for speed. When a \doxylink{classcqueue_1_1_byte_queue}{Byte\+Queue} object is created, memory is allocated to hold the given number of items. Data is put into the queue with its \doxylink{classcqueue_1_1_byte_queue_a36ba763a09f87c26a3a3ccadea6657f7}{put()} method, and the oldest available data is retrieved with the \doxylink{classcqueue_1_1_byte_queue_a9bb8c9ce369431e40f3862613677637b}{get()} method. Because running \doxylink{classcqueue_1_1_byte_queue_a36ba763a09f87c26a3a3ccadea6657f7}{put()} and \doxylink{classcqueue_1_1_byte_queue_a9bb8c9ce369431e40f3862613677637b}{get()} doesn\textquotesingle{}t allocate any memory, it can be used in interrupt callbacks.
+
+When one creates a queue, one specifies the number of items which can be stored at once in the queue. After creating a queue, one writes items into a queue using its \doxylink{classcqueue_1_1_byte_queue_a36ba763a09f87c26a3a3ccadea6657f7}{put()} method. Writing into a full queue causes the oldest data to be erased; method \doxylink{classcqueue_1_1_byte_queue_afe2f1d5961475554f9ff98192c1dcc57}{full()} can be used before writing to check for such a problem. Reading from the queue is done by a call to \doxylink{classcqueue_1_1_byte_queue_a9bb8c9ce369431e40f3862613677637b}{get()}, which returns the oldest available data item or {\ttfamily None} if the queue is empty\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QUEUE\_SIZE\ =\ 128}
+\DoxyCodeLine{my\_queue\ =\ \mbox{\hyperlink{classcqueue_1_1_byte_queue}{cqueue.ByteQueue}}(QUEUE\_SIZE)}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ count\ \textcolor{keywordflow}{in}\ range(10):}
+\DoxyCodeLine{\ \ \ \ my\_queue.put(f\textcolor{stringliteral}{"{}\{count\},"{}},\ end=\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{...}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ int\_queue.any():}
+\DoxyCodeLine{\ \ \ \ print(my\_queue.get())}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcqueue_1_1_byte_queue_adbcb4ca11ece515a3ef5aa0aa3efd9bd}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_adbcb4ca11ece515a3ef5aa0aa3efd9bd} 
+cqueue.\+Byte\+Queue.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Create a fast queue for characters. 
+
+When the queue is created, memory is allocated for the given number of items. Putting items into the queue won\textquotesingle{}t cause new memory to be allocated, so the queue can be used in interrupt callbacks and will run quickly. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The maximum number of integers that the queue can hold \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcqueue_1_1_byte_queue_a8cc8d6604d0310383ee124bd6f17166f}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!any@{any}}
+\index{any@{any}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{any()}{any()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_a8cc8d6604d0310383ee124bd6f17166f} 
+ bool cqueue.\+Byte\+Queue.\+any (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if there are any items available in the queue. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily True} if there is at least one item in the queue, {\ttfamily False} if not 
+\end{DoxyReturn}
+\Hypertarget{classcqueue_1_1_byte_queue_aedf4a633af912504f57cb13136a2f586}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!available@{available}}
+\index{available@{available}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_aedf4a633af912504f57cb13136a2f586} 
+ int cqueue.\+Byte\+Queue.\+available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks how many items are available to be read from the queue. 
+
+\begin{DoxyReturn}{Returns}
+An integer containing the number of items in the queue 
+\end{DoxyReturn}
+\Hypertarget{classcqueue_1_1_byte_queue_a156857b152f0b88d5c2e46b7a292d099}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!clear@{clear}}
+\index{clear@{clear}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_a156857b152f0b88d5c2e46b7a292d099} 
+cqueue.\+Byte\+Queue.\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Empty the queue. 
+
+The pointers used to access data in the queue are reset to their empty positions. The contents of the memory are not changed and no new memory is allocated. \Hypertarget{classcqueue_1_1_byte_queue_afe2f1d5961475554f9ff98192c1dcc57}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!full@{full}}
+\index{full@{full}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{full()}{full()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_afe2f1d5961475554f9ff98192c1dcc57} 
+ bool cqueue.\+Byte\+Queue.\+full (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check whether the queue is currently full. 
+
+If the queue is full, writing new data will cause the oldest data to be overwritten and lost. \begin{DoxyReturn}{Returns}
+{\ttfamily True} if the queue is currently full or {\ttfamily False} if not 
+\end{DoxyReturn}
+\Hypertarget{classcqueue_1_1_byte_queue_a9bb8c9ce369431e40f3862613677637b}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!get@{get}}
+\index{get@{get}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_a9bb8c9ce369431e40f3862613677637b} 
+ int cqueue.\+Byte\+Queue.\+get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get an item from the queue if one is available. 
+
+If the queue is empty, {\ttfamily None} will be returned. \begin{DoxyReturn}{Returns}
+The oldest character in the queue, or {\ttfamily None} if the queue is currently empty. 
+\end{DoxyReturn}
+\Hypertarget{classcqueue_1_1_byte_queue_aa5defe1d3f368a8b60f13d4f86a400ba}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!max\_full@{max\_full}}
+\index{max\_full@{max\_full}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{max\_full()}{max\_full()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_aa5defe1d3f368a8b60f13d4f86a400ba} 
+ int cqueue.\+Byte\+Queue.\+max\+\_\+full (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the maximum number of unread items that have been in the queue. 
+
+This method returns the maximum number of items that have been in the queue at any point since the queue was created or cleared. \begin{DoxyReturn}{Returns}
+The maximum number of items that have been in the queue 
+\end{DoxyReturn}
+\Hypertarget{classcqueue_1_1_byte_queue_a36ba763a09f87c26a3a3ccadea6657f7}\index{cqueue.ByteQueue@{cqueue.ByteQueue}!put@{put}}
+\index{put@{put}!cqueue.ByteQueue@{cqueue.ByteQueue}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily \label{classcqueue_1_1_byte_queue_a36ba763a09f87c26a3a3ccadea6657f7} 
+cqueue.\+Byte\+Queue.\+put (\begin{DoxyParamCaption}\item[{int}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Put a character or string into the queue. 
+
+If the queue is already full, the oldest data will be overwritten. If this could cause problems, one can call {\ttfamily \doxylink{classcqueue_1_1_byte_queue_afe2f1d5961475554f9ff98192c1dcc57}{full()}} to check if the queue is already full before writing the data. 
+\begin{DoxyParams}{Parameters}
+{\em data} & An integer to be put into the back of the queue \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cqueue_8py}{cqueue.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,134 @@
+\doxysection{motor.\+Motor Class Reference}
+\hypertarget{classmotor_1_1_motor}{}\label{classmotor_1_1_motor}\index{motor.Motor@{motor.Motor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmotor_1_1_motor_a23fc082fba0d880a0910dca65688d0c4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmotor_1_1_motor_aa04f99993bbf46f8af14f8a21b4c9572}{SLP}}, \mbox{\hyperlink{classmotor_1_1_motor_a3c905d8fee491b341c5a2f5cce4bc9e2}{DIR}}, \mbox{\hyperlink{classmotor_1_1_motor_ac29f3388b99425e24f314ea07b61da22}{PWM}}, timer, channel)
+\begin{DoxyCompactList}\small\item\em Class to control a motor driver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_aacaeae41be4d94273ff9318b5a616b93}{set\+\_\+effort}} (self, effort)
+\begin{DoxyCompactList}\small\item\em Sets the motor effort based on a value between -\/100 and 100. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_a9f58c627d1e1d0437921b0eac5b81222}{enable}} (self)
+\begin{DoxyCompactList}\small\item\em Enables the motor by taking it out of sleep mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_af791b20dd99b0a34d48b0178dc11fcb0}{disable}} (self)
+\begin{DoxyCompactList}\small\item\em Disables the motor by setting sleep mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_a8bd5fcb7d6e4066e47827bed1dcce974}{get\+Dir}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current direction state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmotor_1_1_motor_aa04f99993bbf46f8af14f8a21b4c9572}{SLP}} = Pin(SLP, mode=Pin.\+OUT\+\_\+\+PP)
+\begin{DoxyCompactList}\small\item\em Initialize sleep control pin and put motor in sleep mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_a3c905d8fee491b341c5a2f5cce4bc9e2}{DIR}} = Pin(DIR, mode=Pin.\+OUT\+\_\+\+PP)
+\begin{DoxyCompactList}\small\item\em Initialize direction control pin and set default direction (forward). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_ac29f3388b99425e24f314ea07b61da22}{PWM}} = Pin(PWM, mode=Pin.\+OUT\+\_\+\+PP)
+\begin{DoxyCompactList}\small\item\em Initialize PWM control pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmotor_1_1_motor_a35d4753a2e6e24dd54b45c08c26cdee8}{ch}} = tim.\+channel(channel, Timer.\+PWM, pin=self.\+PWM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmotor_1_1_motor_a23fc082fba0d880a0910dca65688d0c4}\index{motor.Motor@{motor.Motor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_a23fc082fba0d880a0910dca65688d0c4} 
+motor.\+Motor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{SLP}{, }\item[{}]{DIR}{, }\item[{}]{PWM}{, }\item[{}]{timer}{, }\item[{}]{channel}{}\end{DoxyParamCaption})}
+
+
+
+Class to control a motor driver. 
+
+This class initializes the motor control pins for sleep (SLP), direction (DIR), and PWM. It sets up a PWM timer to adjust the motor\textquotesingle{}s effort. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmotor_1_1_motor_af791b20dd99b0a34d48b0178dc11fcb0}\index{motor.Motor@{motor.Motor}!disable@{disable}}
+\index{disable@{disable}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_af791b20dd99b0a34d48b0178dc11fcb0} 
+motor.\+Motor.\+disable (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Disables the motor by setting sleep mode. 
+
+\Hypertarget{classmotor_1_1_motor_a9f58c627d1e1d0437921b0eac5b81222}\index{motor.Motor@{motor.Motor}!enable@{enable}}
+\index{enable@{enable}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_a9f58c627d1e1d0437921b0eac5b81222} 
+motor.\+Motor.\+enable (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Enables the motor by taking it out of sleep mode. 
+
+\Hypertarget{classmotor_1_1_motor_a8bd5fcb7d6e4066e47827bed1dcce974}\index{motor.Motor@{motor.Motor}!getDir@{getDir}}
+\index{getDir@{getDir}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{getDir()}{getDir()}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_a8bd5fcb7d6e4066e47827bed1dcce974} 
+motor.\+Motor.\+get\+Dir (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current direction state. 
+
+\begin{DoxyReturn}{Returns}
+0 for forward, 1 for reverse. 
+\end{DoxyReturn}
+\Hypertarget{classmotor_1_1_motor_aacaeae41be4d94273ff9318b5a616b93}\index{motor.Motor@{motor.Motor}!set\_effort@{set\_effort}}
+\index{set\_effort@{set\_effort}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{set\_effort()}{set\_effort()}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_aacaeae41be4d94273ff9318b5a616b93} 
+motor.\+Motor.\+set\+\_\+effort (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{effort}{}\end{DoxyParamCaption})}
+
+
+
+Sets the motor effort based on a value between -\/100 and 100. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effort} & An integer representing the desired effort. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmotor_1_1_motor_a35d4753a2e6e24dd54b45c08c26cdee8}\index{motor.Motor@{motor.Motor}!ch@{ch}}
+\index{ch@{ch}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{ch}{ch}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_a35d4753a2e6e24dd54b45c08c26cdee8} 
+motor.\+Motor.\+ch = tim.\+channel(channel, Timer.\+PWM, pin=self.\+PWM)}
+
+\Hypertarget{classmotor_1_1_motor_a3c905d8fee491b341c5a2f5cce4bc9e2}\index{motor.Motor@{motor.Motor}!DIR@{DIR}}
+\index{DIR@{DIR}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{DIR}{DIR}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_a3c905d8fee491b341c5a2f5cce4bc9e2} 
+motor.\+Motor.\+DIR = Pin(DIR, mode=Pin.\+OUT\+\_\+\+PP)}
+
+
+
+Initialize direction control pin and set default direction (forward). 
+
+\Hypertarget{classmotor_1_1_motor_ac29f3388b99425e24f314ea07b61da22}\index{motor.Motor@{motor.Motor}!PWM@{PWM}}
+\index{PWM@{PWM}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{PWM}{PWM}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_ac29f3388b99425e24f314ea07b61da22} 
+motor.\+Motor.\+PWM = Pin(PWM, mode=Pin.\+OUT\+\_\+\+PP)}
+
+
+
+Initialize PWM control pin. 
+
+\Hypertarget{classmotor_1_1_motor_aa04f99993bbf46f8af14f8a21b4c9572}\index{motor.Motor@{motor.Motor}!SLP@{SLP}}
+\index{SLP@{SLP}!motor.Motor@{motor.Motor}}
+\doxysubsubsection{\texorpdfstring{SLP}{SLP}}
+{\footnotesize\ttfamily \label{classmotor_1_1_motor_aa04f99993bbf46f8af14f8a21b4c9572} 
+motor.\+Motor.\+SLP = Pin(SLP, mode=Pin.\+OUT\+\_\+\+PP)}
+
+
+
+Initialize sleep control pin and put motor in sleep mode. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{motor_8py}{motor.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,330 @@
+\doxysection{cotask.\+Task Class Reference}
+\hypertarget{classcotask_1_1_task}{}\label{classcotask_1_1_task}\index{cotask.Task@{cotask.Task}}
+
+
+Implements multitasking with scheduling and some performance logging.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcotask_1_1_task_a2fe3b73c0ccc2cd20a89694e336291f5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, run\+\_\+fun, \mbox{\hyperlink{classcotask_1_1_task_ab54e069dd0b4f0a2f8e7f00c94998a10}{name}}="{}No\+Name"{}, \mbox{\hyperlink{classcotask_1_1_task_aeced93c7b7d23e33de9693d278aef88b}{priority}}=0, \mbox{\hyperlink{classcotask_1_1_task_afc5c88f112f516002f67118a0ee82f44}{period}}=None, profile=False, trace=False, shares=())
+\begin{DoxyCompactList}\small\item\em Initialize a task object so it may be run by the scheduler. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcotask_1_1_task_af60def0ed4a1bc5fec32f3cf8b8a90c8}{schedule}} (self)
+\begin{DoxyCompactList}\small\item\em This method is called by the scheduler; it attempts to run this task. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcotask_1_1_task_a6102bc35d7cb1ce292abc85d4ddc23e1}{ready}} (self)
+\begin{DoxyCompactList}\small\item\em This method checks if the task is ready to run. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcotask_1_1_task_a0fcee5beb8b2fed77e5125c58ba35c26}{set\+\_\+period}} (self, new\+\_\+period)
+\begin{DoxyCompactList}\small\item\em This method sets the period between runs of the task to the given number of milliseconds, or {\ttfamily None} if the task is triggered by calls to {\ttfamily \doxylink{classcotask_1_1_task_a8066da53e82716dc9f0495b28a89b781}{go()}} rather than time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcotask_1_1_task_a0fd4093dcd01cd1d05ace187956340cf}{reset\+\_\+profile}} (self)
+\begin{DoxyCompactList}\small\item\em This method resets the variables used for execution time profiling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcotask_1_1_task_a51c5df87e0e707f9e3c02d9765fcbee1}{get\+\_\+trace}} (self)
+\begin{DoxyCompactList}\small\item\em This method returns a string containing the task\textquotesingle{}s transition trace. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcotask_1_1_task_a8066da53e82716dc9f0495b28a89b781}{go}} (self)
+\begin{DoxyCompactList}\small\item\em Method to set a flag so that this task indicates that it\textquotesingle{}s ready to run. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcotask_1_1_task_a2023e255766db032de255fd65c0b1943}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em This method converts the task to a string for diagnostic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcotask_1_1_task_ab54e069dd0b4f0a2f8e7f00c94998a10}{name}} = name
+\begin{DoxyCompactList}\small\item\em The name of the task, hopefully a short and descriptive string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcotask_1_1_task_aeced93c7b7d23e33de9693d278aef88b}{priority}} = int(priority)
+\begin{DoxyCompactList}\small\item\em The task\textquotesingle{}s priority, an integer with higher numbers meaning higher priority. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcotask_1_1_task_afc5c88f112f516002f67118a0ee82f44}{period}} = int(period \texorpdfstring{$\ast$}{*} 1000)
+\item 
+bool \mbox{\hyperlink{classcotask_1_1_task_ad309fae1890bffafa75e9fdb33fae600}{go\+\_\+flag}} = False
+\begin{DoxyCompactList}\small\item\em Flag which is set true when the task is ready to be run by the scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcotask_1_1_task_a3d158e6e4971c204449c07f72e67a186}{\+\_\+run\+\_\+gen}} = run\+\_\+fun(shares)
+\item 
+\mbox{\hyperlink{classcotask_1_1_task_aa443e9f35f5dee489023afb5d5b9d091}{\+\_\+next\+\_\+run}} = utime.\+ticks\+\_\+us() + self.\+period
+\item 
+\mbox{\hyperlink{classcotask_1_1_task_a0d0e9249bbce322f63ad1d2004069fac}{\+\_\+prof}} = profile
+\item 
+int \mbox{\hyperlink{classcotask_1_1_task_a05a6180fe3ba22a1d1e36fe1cc34cd16}{\+\_\+prev\+\_\+state}} = 0
+\item 
+bool \mbox{\hyperlink{classcotask_1_1_task_a12647eaf44c1e5c9e6083e0ce77bcb3f}{\+\_\+trace}} = trace
+\item 
+list \mbox{\hyperlink{classcotask_1_1_task_acaeeb90a6096f7d1e6458648dc84f6b7}{\+\_\+tr\+\_\+data}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{classcotask_1_1_task_a99c833294c7426f5f5b753f382d9f88d}{\+\_\+prev\+\_\+time}} = utime.\+ticks\+\_\+us()
+\item 
+int \mbox{\hyperlink{classcotask_1_1_task_a5549bd87387fee6088efba87766a6fa7}{\+\_\+slowest}} = runt
+\item 
+int \mbox{\hyperlink{classcotask_1_1_task_a9b281cae547cbe63219a13ec6f032cb9}{\+\_\+latest}} = late
+\item 
+int \mbox{\hyperlink{classcotask_1_1_task_ae190f013ce9955c05841c20f2d46e9ac}{\+\_\+runs}} = 0
+\item 
+int \mbox{\hyperlink{classcotask_1_1_task_ac93a114add603ab2bb498c995fd64ecd}{\+\_\+run\+\_\+sum}} = 0
+\item 
+int \mbox{\hyperlink{classcotask_1_1_task_a10930f344a7f5615b2fd996aa95e39aa}{\+\_\+late\+\_\+sum}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements multitasking with scheduling and some performance logging. 
+
+This class implements behavior common to tasks in a cooperative multitasking system which runs in Micro\+Python. The ability to be scheduled on the basis of time or an external software trigger or interrupt is implemented, state transitions can be recorded, and run times can be profiled. The user\textquotesingle{}s task code must be implemented in a generator which yields the state (and the CPU) after it has run for a short and bounded period of time.
+
+{\bfseries{Example\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{def\ }task1\_fun\ ():}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{stringliteral}{'''!\ This\ function\ switches\ states\ repeatedly\ for\ no\ reason\ '''}}
+\DoxyCodeLine{\ \ \ \ \ state\ =\ 0}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ state\ ==\ 0:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ 1}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ state\ ==\ 1:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ 0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{yield}\ (state)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \textcolor{comment}{\#\ In\ main\ routine,\ create\ this\ task\ and\ set\ it\ to\ run\ twice\ per\ second}}
+\DoxyCodeLine{\ task1\ =\ \mbox{\hyperlink{classcotask_1_1_task}{cotask.Task}}\ (task1\_fun,\ name\ =\ \textcolor{stringliteral}{'Task\ 1'},\ priority\ =\ 1,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ period\ =\ 500,\ profile\ =\ \textcolor{keyword}{True},\ trace\ =\ \textcolor{keyword}{True})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \textcolor{comment}{\#\ Add\ the\ task\ to\ the\ list\ (so\ it\ will\ be\ run)\ and\ run\ scheduler}}
+\DoxyCodeLine{\ cotask.task\_list.append\ (task1)}
+\DoxyCodeLine{\ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:\ }
+\DoxyCodeLine{\ \ \ \ \ cotask.task\_list.pri\_sched\ ()}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcotask_1_1_task_a2fe3b73c0ccc2cd20a89694e336291f5}\index{cotask.Task@{cotask.Task}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a2fe3b73c0ccc2cd20a89694e336291f5} 
+cotask.\+Task.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{run\+\_\+fun}{, }\item[{}]{name}{ = {\ttfamily "{}NoName"{}}, }\item[{}]{priority}{ = {\ttfamily 0}, }\item[{}]{period}{ = {\ttfamily None}, }\item[{}]{profile}{ = {\ttfamily False}, }\item[{}]{trace}{ = {\ttfamily False}, }\item[{}]{shares}{ = {\ttfamily ()}}\end{DoxyParamCaption})}
+
+
+
+Initialize a task object so it may be run by the scheduler. 
+
+This method initializes a task object, saving copies of constructor parameters and preparing an empty dictionary for states.
+
+
+\begin{DoxyParams}{Parameters}
+{\em run\+\_\+fun} & The function which implements the task\textquotesingle{}s code. It must be a generator which yields the current state. \\
+\hline
+{\em name} & The name of the task, by default {\ttfamily No\+Name}. This should be overridden with a more descriptive name by the programmer. \\
+\hline
+{\em priority} & The priority of the task, a positive integer with higher numbers meaning higher priority (default 0) \\
+\hline
+{\em period} & The time in milliseconds between runs of the task if it\textquotesingle{}s run by a timer or {\ttfamily None} if the task is not run by a timer. The time can be given in a {\ttfamily float} or {\ttfamily int}; it will be converted to microseconds for internal use by the scheduler. \\
+\hline
+{\em profile} & Set to {\ttfamily True} to enable run-\/time profiling \\
+\hline
+{\em trace} & Set to {\ttfamily True} to generate a list of transitions between states. {\bfseries{Note\+:}} This slows things down and allocates memory. \\
+\hline
+{\em shares} & A list or tuple of shares and queues used by this task. If no list is given, no shares are passed to the task \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcotask_1_1_task_a2023e255766db032de255fd65c0b1943}\index{cotask.Task@{cotask.Task}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a2023e255766db032de255fd65c0b1943} 
+cotask.\+Task.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+This method converts the task to a string for diagnostic use. 
+
+It shows information about the task, including execution time profiling results if profiling has been done. \begin{DoxyReturn}{Returns}
+The string which represents the task 
+\end{DoxyReturn}
+\Hypertarget{classcotask_1_1_task_a51c5df87e0e707f9e3c02d9765fcbee1}\index{cotask.Task@{cotask.Task}!get\_trace@{get\_trace}}
+\index{get\_trace@{get\_trace}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{get\_trace()}{get\_trace()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a51c5df87e0e707f9e3c02d9765fcbee1} 
+cotask.\+Task.\+get\+\_\+trace (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+This method returns a string containing the task\textquotesingle{}s transition trace. 
+
+The trace is a set of tuples, each of which contains a time and the states from and to which the system transitioned. \begin{DoxyReturn}{Returns}
+A possibly quite large string showing state transitions 
+\end{DoxyReturn}
+\Hypertarget{classcotask_1_1_task_a8066da53e82716dc9f0495b28a89b781}\index{cotask.Task@{cotask.Task}!go@{go}}
+\index{go@{go}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{go()}{go()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a8066da53e82716dc9f0495b28a89b781} 
+cotask.\+Task.\+go (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Method to set a flag so that this task indicates that it\textquotesingle{}s ready to run. 
+
+This method may be called from an interrupt service routine or from another task which has data that this task needs to process soon. \Hypertarget{classcotask_1_1_task_a6102bc35d7cb1ce292abc85d4ddc23e1}\index{cotask.Task@{cotask.Task}!ready@{ready}}
+\index{ready@{ready}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{ready()}{ready()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a6102bc35d7cb1ce292abc85d4ddc23e1} 
+ bool cotask.\+Task.\+ready (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+This method checks if the task is ready to run. 
+
+If the task runs on a timer, this method checks what time it is; if not, this method checks the flag which indicates that the task is ready to go. This method may be overridden in descendent classes to implement some other behavior. \Hypertarget{classcotask_1_1_task_a0fd4093dcd01cd1d05ace187956340cf}\index{cotask.Task@{cotask.Task}!reset\_profile@{reset\_profile}}
+\index{reset\_profile@{reset\_profile}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{reset\_profile()}{reset\_profile()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a0fd4093dcd01cd1d05ace187956340cf} 
+cotask.\+Task.\+reset\+\_\+profile (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+This method resets the variables used for execution time profiling. 
+
+This method is also used by {\ttfamily \doxylink{classcotask_1_1_task_a2fe3b73c0ccc2cd20a89694e336291f5}{\+\_\+\+\_\+init\+\_\+\+\_\+()}} to create the variables. \Hypertarget{classcotask_1_1_task_af60def0ed4a1bc5fec32f3cf8b8a90c8}\index{cotask.Task@{cotask.Task}!schedule@{schedule}}
+\index{schedule@{schedule}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{schedule()}{schedule()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_af60def0ed4a1bc5fec32f3cf8b8a90c8} 
+ bool cotask.\+Task.\+schedule (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+This method is called by the scheduler; it attempts to run this task. 
+
+If the task is not yet ready to run, this method returns {\ttfamily False} immediately; if this task is ready to run, it runs the task\textquotesingle{}s generator up to the next {\ttfamily yield()} and then returns {\ttfamily True}.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily True} if the task ran or {\ttfamily False} if it did not 
+\end{DoxyReturn}
+\Hypertarget{classcotask_1_1_task_a0fcee5beb8b2fed77e5125c58ba35c26}\index{cotask.Task@{cotask.Task}!set\_period@{set\_period}}
+\index{set\_period@{set\_period}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{set\_period()}{set\_period()}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a0fcee5beb8b2fed77e5125c58ba35c26} 
+cotask.\+Task.\+set\+\_\+period (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{new\+\_\+period}{}\end{DoxyParamCaption})}
+
+
+
+This method sets the period between runs of the task to the given number of milliseconds, or {\ttfamily None} if the task is triggered by calls to {\ttfamily \doxylink{classcotask_1_1_task_a8066da53e82716dc9f0495b28a89b781}{go()}} rather than time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+period} & The new period in milliseconds between task runs \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcotask_1_1_task_a10930f344a7f5615b2fd996aa95e39aa}\index{cotask.Task@{cotask.Task}!\_late\_sum@{\_late\_sum}}
+\index{\_late\_sum@{\_late\_sum}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_late\_sum}{\_late\_sum}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a10930f344a7f5615b2fd996aa95e39aa} 
+int cotask.\+Task.\+\_\+late\+\_\+sum = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a9b281cae547cbe63219a13ec6f032cb9}\index{cotask.Task@{cotask.Task}!\_latest@{\_latest}}
+\index{\_latest@{\_latest}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_latest}{\_latest}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a9b281cae547cbe63219a13ec6f032cb9} 
+int cotask.\+Task.\+\_\+latest = late\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_aa443e9f35f5dee489023afb5d5b9d091}\index{cotask.Task@{cotask.Task}!\_next\_run@{\_next\_run}}
+\index{\_next\_run@{\_next\_run}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_next\_run}{\_next\_run}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_aa443e9f35f5dee489023afb5d5b9d091} 
+cotask.\+Task.\+\_\+next\+\_\+run = utime.\+ticks\+\_\+us() + self.\+period\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a05a6180fe3ba22a1d1e36fe1cc34cd16}\index{cotask.Task@{cotask.Task}!\_prev\_state@{\_prev\_state}}
+\index{\_prev\_state@{\_prev\_state}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_prev\_state}{\_prev\_state}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a05a6180fe3ba22a1d1e36fe1cc34cd16} 
+int cotask.\+Task.\+\_\+prev\+\_\+state = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a99c833294c7426f5f5b753f382d9f88d}\index{cotask.Task@{cotask.Task}!\_prev\_time@{\_prev\_time}}
+\index{\_prev\_time@{\_prev\_time}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_prev\_time}{\_prev\_time}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a99c833294c7426f5f5b753f382d9f88d} 
+cotask.\+Task.\+\_\+prev\+\_\+time = utime.\+ticks\+\_\+us()\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a0d0e9249bbce322f63ad1d2004069fac}\index{cotask.Task@{cotask.Task}!\_prof@{\_prof}}
+\index{\_prof@{\_prof}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_prof}{\_prof}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a0d0e9249bbce322f63ad1d2004069fac} 
+cotask.\+Task.\+\_\+prof = profile\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a3d158e6e4971c204449c07f72e67a186}\index{cotask.Task@{cotask.Task}!\_run\_gen@{\_run\_gen}}
+\index{\_run\_gen@{\_run\_gen}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_run\_gen}{\_run\_gen}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a3d158e6e4971c204449c07f72e67a186} 
+cotask.\+Task.\+\_\+run\+\_\+gen = run\+\_\+fun(shares)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_ac93a114add603ab2bb498c995fd64ecd}\index{cotask.Task@{cotask.Task}!\_run\_sum@{\_run\_sum}}
+\index{\_run\_sum@{\_run\_sum}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_run\_sum}{\_run\_sum}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_ac93a114add603ab2bb498c995fd64ecd} 
+int cotask.\+Task.\+\_\+run\+\_\+sum = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_ae190f013ce9955c05841c20f2d46e9ac}\index{cotask.Task@{cotask.Task}!\_runs@{\_runs}}
+\index{\_runs@{\_runs}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_runs}{\_runs}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_ae190f013ce9955c05841c20f2d46e9ac} 
+int cotask.\+Task.\+\_\+runs = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a5549bd87387fee6088efba87766a6fa7}\index{cotask.Task@{cotask.Task}!\_slowest@{\_slowest}}
+\index{\_slowest@{\_slowest}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_slowest}{\_slowest}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a5549bd87387fee6088efba87766a6fa7} 
+int cotask.\+Task.\+\_\+slowest = runt\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_acaeeb90a6096f7d1e6458648dc84f6b7}\index{cotask.Task@{cotask.Task}!\_tr\_data@{\_tr\_data}}
+\index{\_tr\_data@{\_tr\_data}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_tr\_data}{\_tr\_data}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_acaeeb90a6096f7d1e6458648dc84f6b7} 
+list cotask.\+Task.\+\_\+tr\+\_\+data = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_a12647eaf44c1e5c9e6083e0ce77bcb3f}\index{cotask.Task@{cotask.Task}!\_trace@{\_trace}}
+\index{\_trace@{\_trace}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{\_trace}{\_trace}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_a12647eaf44c1e5c9e6083e0ce77bcb3f} 
+bool cotask.\+Task.\+\_\+trace = trace\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcotask_1_1_task_ad309fae1890bffafa75e9fdb33fae600}\index{cotask.Task@{cotask.Task}!go\_flag@{go\_flag}}
+\index{go\_flag@{go\_flag}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{go\_flag}{go\_flag}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_ad309fae1890bffafa75e9fdb33fae600} 
+bool cotask.\+Task.\+go\+\_\+flag = False}
+
+
+
+Flag which is set true when the task is ready to be run by the scheduler. 
+
+\Hypertarget{classcotask_1_1_task_ab54e069dd0b4f0a2f8e7f00c94998a10}\index{cotask.Task@{cotask.Task}!name@{name}}
+\index{name@{name}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_ab54e069dd0b4f0a2f8e7f00c94998a10} 
+cotask.\+Task.\+name = name}
+
+
+
+The name of the task, hopefully a short and descriptive string. 
+
+\Hypertarget{classcotask_1_1_task_afc5c88f112f516002f67118a0ee82f44}\index{cotask.Task@{cotask.Task}!period@{period}}
+\index{period@{period}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{period}{period}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_afc5c88f112f516002f67118a0ee82f44} 
+int cotask.\+Task.\+period = int(period \texorpdfstring{$\ast$}{*} 1000)}
+
+\Hypertarget{classcotask_1_1_task_aeced93c7b7d23e33de9693d278aef88b}\index{cotask.Task@{cotask.Task}!priority@{priority}}
+\index{priority@{priority}!cotask.Task@{cotask.Task}}
+\doxysubsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily \label{classcotask_1_1_task_aeced93c7b7d23e33de9693d278aef88b} 
+cotask.\+Task.\+priority = int(priority)}
+
+
+
+The task\textquotesingle{}s priority, an integer with higher numbers meaning higher priority. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cotask_8py}{cotask.\+py}}\end{DoxyCompactItemize}

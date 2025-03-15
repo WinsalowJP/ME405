@@ -1,0 +1,72 @@
+\doxysection{task\+\_\+share Namespace Reference}
+\hypertarget{namespacetask__share}{}\label{namespacetask__share}\index{task\_share@{task\_share}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtask__share_1_1_base_share}{Base\+Share}}
+\begin{DoxyCompactList}\small\item\em Base class for queues and shares which exchange data between tasks. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtask__share_1_1_queue}{Queue}}
+\begin{DoxyCompactList}\small\item\em A queue which is used to transfer data from one task to another. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtask__share_1_1_share}{Share}}
+\begin{DoxyCompactList}\small\item\em An item which holds data to be shared between tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetask__share_ad6aea1db68be1a10f72039a5ac9e9dd4}{show\+\_\+all}} ()
+\begin{DoxyCompactList}\small\item\em Create a string holding a diagnostic printout showing the status of each queue and share in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacetask__share_a75818e5b662453e3723d0f234c85e519}{share\+\_\+list}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em This is a system-\/wide list of all the queues and shared variables. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespacetask__share_af5ee68a35f9ce19aef4c4bd4ab7c2679}{type\+\_\+code\+\_\+strings}}
+\begin{DoxyCompactList}\small\item\em This dictionary allows readable printouts of queue and share data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacetask__share_ad6aea1db68be1a10f72039a5ac9e9dd4}\index{task\_share@{task\_share}!show\_all@{show\_all}}
+\index{show\_all@{show\_all}!task\_share@{task\_share}}
+\doxysubsubsection{\texorpdfstring{show\_all()}{show\_all()}}
+{\footnotesize\ttfamily \label{namespacetask__share_ad6aea1db68be1a10f72039a5ac9e9dd4} 
+task\+\_\+share.\+show\+\_\+all (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Create a string holding a diagnostic printout showing the status of each queue and share in the system. 
+
+\begin{DoxyReturn}{Returns}
+A string containing information about each queue and share 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacetask__share_a75818e5b662453e3723d0f234c85e519}\index{task\_share@{task\_share}!share\_list@{share\_list}}
+\index{share\_list@{share\_list}!task\_share@{task\_share}}
+\doxysubsubsection{\texorpdfstring{share\_list}{share\_list}}
+{\footnotesize\ttfamily \label{namespacetask__share_a75818e5b662453e3723d0f234c85e519} 
+list task\+\_\+share.\+share\+\_\+list = \mbox{[}$\,$\mbox{]}}
+
+
+
+This is a system-\/wide list of all the queues and shared variables. 
+
+It is used to create diagnostic printouts. \Hypertarget{namespacetask__share_af5ee68a35f9ce19aef4c4bd4ab7c2679}\index{task\_share@{task\_share}!type\_code\_strings@{type\_code\_strings}}
+\index{type\_code\_strings@{type\_code\_strings}!task\_share@{task\_share}}
+\doxysubsubsection{\texorpdfstring{type\_code\_strings}{type\_code\_strings}}
+{\footnotesize\ttfamily \label{namespacetask__share_af5ee68a35f9ce19aef4c4bd4ab7c2679} 
+dict task\+\_\+share.\+type\+\_\+code\+\_\+strings}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{\textcolor{stringliteral}{'b'}\ :\ \textcolor{stringliteral}{"{}int8"{}},\ \ \ \textcolor{stringliteral}{'B'}\ :\ \textcolor{stringliteral}{"{}uint8"{}},}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'h'}\ :\ \textcolor{stringliteral}{"{}int16"{}},\ \ \textcolor{stringliteral}{'H'}\ :\ \textcolor{stringliteral}{"{}uint16"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'i'}\ :\ \textcolor{stringliteral}{"{}int(?)"{}},\ \textcolor{stringliteral}{'I'}\ :\ \textcolor{stringliteral}{"{}uint(?)"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'l'}\ :\ \textcolor{stringliteral}{"{}int32"{}},\ \ \textcolor{stringliteral}{'L'}\ :\ \textcolor{stringliteral}{"{}uint32"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'q'}\ :\ \textcolor{stringliteral}{"{}int64"{}},\ \ \textcolor{stringliteral}{'Q'}\ :\ \textcolor{stringliteral}{"{}uint64"{}},}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'f'}\ :\ \textcolor{stringliteral}{"{}float"{}},\ \ \textcolor{stringliteral}{'d'}\ :\ \textcolor{stringliteral}{"{}double"{}}\}}
+
+\end{DoxyCode}
+
+
+This dictionary allows readable printouts of queue and share data types. 
+

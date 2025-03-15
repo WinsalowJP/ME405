@@ -1,0 +1,150 @@
+\doxysection{pid.\+PID Class Reference}
+\hypertarget{classpid_1_1_p_i_d}{}\label{classpid_1_1_p_i_d}\index{pid.PID@{pid.PID}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_a4ca5944ceb446f967977c55e1eb45e20}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classpid_1_1_p_i_d_a6a48937c671d3c3f071bb183b8231ef5}{kp}}, \mbox{\hyperlink{classpid_1_1_p_i_d_a243647827a17713f3cf2b86707ea2ea5}{ki}}, \mbox{\hyperlink{classpid_1_1_p_i_d_a92c01fb336ad7ac9d653c9aea63d8e96}{kd}}, \mbox{\hyperlink{classpid_1_1_p_i_d_a08ca4204e10cacd52a9181aa07bb7763}{setpoint}}, \mbox{\hyperlink{classpid_1_1_p_i_d_aca9afcbcf98e4eda61e7720f16ad9f64}{dt}}, \mbox{\hyperlink{classpid_1_1_p_i_d_ac0a8bb9cbf9f9219af57a430539429a4}{output\+\_\+limits}}=(None, None))
+\begin{DoxyCompactList}\small\item\em Initializes a new \doxylink{classpid_1_1_p_i_d}{PID} controller instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_a3753d9e44709d1735a327f1df7efb910}{update}} (self, measured\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Updates the \doxylink{classpid_1_1_p_i_d}{PID} controller and computes the output. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_aa4907862e6b7694d74b4d7df1c3780e1}{setpoint}} (self, setpoint)
+\begin{DoxyCompactList}\small\item\em Updates the desired setpoint for the \doxylink{classpid_1_1_p_i_d}{PID} controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_a6a48937c671d3c3f071bb183b8231ef5}{kp}} = kp
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_a243647827a17713f3cf2b86707ea2ea5}{ki}} = ki
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_a92c01fb336ad7ac9d653c9aea63d8e96}{kd}} = kd
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_a08ca4204e10cacd52a9181aa07bb7763}{setpoint}} = setpoint
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_aca9afcbcf98e4eda61e7720f16ad9f64}{dt}} = dt
+\item 
+\mbox{\hyperlink{classpid_1_1_p_i_d_ac0a8bb9cbf9f9219af57a430539429a4}{output\+\_\+limits}} = output\+\_\+limits
+\item 
+int \mbox{\hyperlink{classpid_1_1_p_i_d_a8ecda8c76cd7d1a4ac2cffe42ca16ac2}{integral}} = 0
+\item 
+int \mbox{\hyperlink{classpid_1_1_p_i_d_af228a86fba7845731c092b02d65c13be}{previous\+\_\+error}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classpid_1_1_p_i_d_a4ca5944ceb446f967977c55e1eb45e20}\index{pid.PID@{pid.PID}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a4ca5944ceb446f967977c55e1eb45e20} 
+pid.\+PID.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{kp}{, }\item[{}]{ki}{, }\item[{}]{kd}{, }\item[{}]{setpoint}{, }\item[{}]{dt}{, }\item[{}]{output\+\_\+limits}{ = {\ttfamily (None,~None)}}\end{DoxyParamCaption})}
+
+
+
+Initializes a new \doxylink{classpid_1_1_p_i_d}{PID} controller instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional gain. \\
+\hline
+{\em ki} & Integral gain. \\
+\hline
+{\em kd} & Derivative gain. \\
+\hline
+{\em setpoint} & The desired target value. \\
+\hline
+{\em dt} & Time interval between updates (seconds). \\
+\hline
+{\em output\+\_\+limits} & A tuple (min, max) for output clamping. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpid_1_1_p_i_d_aa4907862e6b7694d74b4d7df1c3780e1}\index{pid.PID@{pid.PID}!setpoint@{setpoint}}
+\index{setpoint@{setpoint}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{setpoint()}{setpoint()}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_aa4907862e6b7694d74b4d7df1c3780e1} 
+pid.\+PID.\+setpoint (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{setpoint}{}\end{DoxyParamCaption})}
+
+
+
+Updates the desired setpoint for the \doxylink{classpid_1_1_p_i_d}{PID} controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setpoint} & The new target value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpid_1_1_p_i_d_a3753d9e44709d1735a327f1df7efb910}\index{pid.PID@{pid.PID}!update@{update}}
+\index{update@{update}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a3753d9e44709d1735a327f1df7efb910} 
+pid.\+PID.\+update (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{measured\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Updates the \doxylink{classpid_1_1_p_i_d}{PID} controller and computes the output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measured\+\_\+value} & The current measured process value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed \doxylink{classpid_1_1_p_i_d}{PID} output (clamped if limits are set). 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classpid_1_1_p_i_d_aca9afcbcf98e4eda61e7720f16ad9f64}\index{pid.PID@{pid.PID}!dt@{dt}}
+\index{dt@{dt}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_aca9afcbcf98e4eda61e7720f16ad9f64} 
+pid.\+PID.\+dt = dt}
+
+\Hypertarget{classpid_1_1_p_i_d_a8ecda8c76cd7d1a4ac2cffe42ca16ac2}\index{pid.PID@{pid.PID}!integral@{integral}}
+\index{integral@{integral}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{integral}{integral}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a8ecda8c76cd7d1a4ac2cffe42ca16ac2} 
+int pid.\+PID.\+integral = 0}
+
+\Hypertarget{classpid_1_1_p_i_d_a92c01fb336ad7ac9d653c9aea63d8e96}\index{pid.PID@{pid.PID}!kd@{kd}}
+\index{kd@{kd}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{kd}{kd}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a92c01fb336ad7ac9d653c9aea63d8e96} 
+pid.\+PID.\+kd = kd}
+
+\Hypertarget{classpid_1_1_p_i_d_a243647827a17713f3cf2b86707ea2ea5}\index{pid.PID@{pid.PID}!ki@{ki}}
+\index{ki@{ki}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{ki}{ki}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a243647827a17713f3cf2b86707ea2ea5} 
+pid.\+PID.\+ki = ki}
+
+\Hypertarget{classpid_1_1_p_i_d_a6a48937c671d3c3f071bb183b8231ef5}\index{pid.PID@{pid.PID}!kp@{kp}}
+\index{kp@{kp}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a6a48937c671d3c3f071bb183b8231ef5} 
+pid.\+PID.\+kp = kp}
+
+\Hypertarget{classpid_1_1_p_i_d_ac0a8bb9cbf9f9219af57a430539429a4}\index{pid.PID@{pid.PID}!output\_limits@{output\_limits}}
+\index{output\_limits@{output\_limits}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{output\_limits}{output\_limits}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_ac0a8bb9cbf9f9219af57a430539429a4} 
+pid.\+PID.\+output\+\_\+limits = output\+\_\+limits}
+
+\Hypertarget{classpid_1_1_p_i_d_af228a86fba7845731c092b02d65c13be}\index{pid.PID@{pid.PID}!previous\_error@{previous\_error}}
+\index{previous\_error@{previous\_error}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{previous\_error}{previous\_error}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_af228a86fba7845731c092b02d65c13be} 
+int pid.\+PID.\+previous\+\_\+error = 0}
+
+\Hypertarget{classpid_1_1_p_i_d_a08ca4204e10cacd52a9181aa07bb7763}\index{pid.PID@{pid.PID}!setpoint@{setpoint}}
+\index{setpoint@{setpoint}!pid.PID@{pid.PID}}
+\doxysubsubsection{\texorpdfstring{setpoint}{setpoint}}
+{\footnotesize\ttfamily \label{classpid_1_1_p_i_d_a08ca4204e10cacd52a9181aa07bb7763} 
+pid.\+PID.\+setpoint = setpoint}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pid_8py}{pid.\+py}}\end{DoxyCompactItemize}

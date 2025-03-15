@@ -1,17 +1,13 @@
-"""
-@brief Updates the encoder readings for left and right encoders.
+## @file encoder_update.py
+#  This file implements a task function to update encoder readings.
+#  It retrieves left and right encoder objects from a shared dictionary and calls their update methods.
 
-This function retrieves the left and right encoder objects from the shared dictionary,
-calls their update methods to compute the latest position and velocity data, and yields
-control to allow for cooperative multitasking.
 
-@param shares A dictionary containing shared objects, which must include keys 'encoderL'
-              and 'encoderR' representing the left and right encoder objects respectively.
-"""
+## @brief Updates both left and right encoders.
+#  @param shares A dictionary with keys 'encoderL' and 'encoderR'.
 def encoder_update(shares):
     encoderL = shares['encoderL']
     encoderR = shares['encoderR']
-
     while True:
         encoderL.update()
         encoderR.update()

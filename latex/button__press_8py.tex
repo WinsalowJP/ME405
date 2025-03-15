@@ -1,0 +1,32 @@
+\doxysection{button\+\_\+press.\+py File Reference}
+\hypertarget{button__press_8py}{}\label{button__press_8py}\index{button\_press.py@{button\_press.py}}
+
+
+This file implements a button interrupt and task to control motor actions.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebutton__press}{button\+\_\+press}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2}{button\+\_\+press.\+button\+\_\+callback}} (pin)
+\begin{DoxyCompactList}\small\item\em Interrupt callback for the button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacebutton__press_ac401b670e45b40a9516daf1c7b05264f}{button\+\_\+press.\+button\+\_\+task}} (shared\+\_\+objects, flag)
+\begin{DoxyCompactList}\small\item\em Task function to process button presses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacebutton__press_ad7cfdff05bc0cc6cf2cbfa40127773d3}{button\+\_\+press.\+button\+\_\+pressed}} = False
+\begin{DoxyCompactList}\small\item\em Global flag to indicate the button was pressed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacebutton__press_a61f7a8a78027d31858ad889fc8ed33c7}{button\+\_\+press.\+button\+\_\+int}} = Ext\+Int(Pin.\+cpu.\+C13, Ext\+Int.\+IRQ\+\_\+\+FALLING, Pin.\+PULL\+\_\+\+NONE, \mbox{\hyperlink{namespacebutton__press_ae66d6b3e3f8d77c47e91535bd43b48e2}{button\+\_\+callback}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements a button interrupt and task to control motor actions. 
+
+It sets up an external interrupt on a button (pin C13) to toggle a global flag, and a task function that responds by enabling or disabling the motors. 

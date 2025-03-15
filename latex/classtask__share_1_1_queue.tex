@@ -1,0 +1,341 @@
+\doxysection{task\+\_\+share.\+Queue Class Reference}
+\hypertarget{classtask__share_1_1_queue}{}\label{classtask__share_1_1_queue}\index{task\_share.Queue@{task\_share.Queue}}
+
+
+A queue which is used to transfer data from one task to another.  
+
+
+Inheritance diagram for task\+\_\+share.\+Queue\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__share_1_1_queue}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_a74a2bf942ef1d70302551900c16af635}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, type\+\_\+code, size, thread\+\_\+protect=False, overwrite=False, name=None)
+\begin{DoxyCompactList}\small\item\em Initialize a queue object to carry and buffer data between tasks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_a0611b4838abb13731d1d487a8178b883}{put}} (self, item, in\+\_\+\+ISR=False)
+\begin{DoxyCompactList}\small\item\em Put an item into the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_a6fec4a9775651c30a4c6de357eb701fc}{get}} (self, in\+\_\+\+ISR=False)
+\begin{DoxyCompactList}\small\item\em Read an item from the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_ac9552672266377c23011552e9df15a63}{any}} (self)
+\begin{DoxyCompactList}\small\item\em Check if there are any items in the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_afee296230d2346df88ffb4b2b22208f3}{empty}} (self)
+\begin{DoxyCompactList}\small\item\em Check if the queue is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_a72be18f8267b2977117eedf15ad896c8}{full}} (self)
+\begin{DoxyCompactList}\small\item\em Check if the queue is full. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_aef595fc4133d297e2b63014c47ac5f27}{num\+\_\+in}} (self)
+\begin{DoxyCompactList}\small\item\em Check how many items are in the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_a0d4b70d239eb7244ff3b7e54d4a4981e}{clear}} (self)
+\begin{DoxyCompactList}\small\item\em Remove all contents from the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_a7b9626a0859625dbcf6d964b8b5c7761}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em This method puts diagnostic information about the queue into a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtask__share_1_1_base_share}{task\+\_\+share.\+Base\+Share}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_base_share_ad8079b40800179be6c58aaac9abb0e26}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, type\+\_\+code, thread\+\_\+protect=True, name=None)
+\begin{DoxyCompactList}\small\item\em Create a base queue object when called by a child class initializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classtask__share_1_1_queue_a6f9d87b116eb16dba0867d3746af9f5f}{ser\+\_\+num}} = 0
+\begin{DoxyCompactList}\small\item\em A counter used to give serial numbers to queues for diagnostic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_ad256c3ac46d8ad097b921c8d448b1b96}{\+\_\+size}} = size
+\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_af15a266174233221505d2abf8fef7e95}{\+\_\+overwrite}} = overwrite
+\item 
+str \mbox{\hyperlink{classtask__share_1_1_queue_a5b343508c95c7cc8ee37992cf7d286ca}{\+\_\+name}}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_queue_ad1e2a4a6b081dd65989ce7af29610abe}{\+\_\+buffer}} = array.\+array (type\+\_\+code, range (size))
+\item 
+int \mbox{\hyperlink{classtask__share_1_1_queue_addb876a457d389d6110a1667c05c4ae3}{\+\_\+wr\+\_\+idx}} = 0
+\item 
+int \mbox{\hyperlink{classtask__share_1_1_queue_a241d2037385f56f5fc7487d2a84fe9ac}{\+\_\+num\+\_\+items}} = self.\+\_\+size
+\item 
+\# Record maximum fillage \mbox{\hyperlink{classtask__share_1_1_queue_a6b3d9887cdd99611f3288c7983581dfd}{\+\_\+max\+\_\+full}}
+\item 
+int \mbox{\hyperlink{classtask__share_1_1_queue_a846a649a41a37dc094cad4c28ec9170f}{\+\_\+rd\+\_\+idx}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtask__share_1_1_base_share}{task\+\_\+share.\+Base\+Share}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtask__share_1_1_base_share_a0e45276424d1600740942b82f216c649}{\+\_\+type\+\_\+code}} = type\+\_\+code
+\item 
+\mbox{\hyperlink{classtask__share_1_1_base_share_acf1741d88ede8f82b9c5f321a92aaa5e}{\+\_\+thread\+\_\+protect}} = thread\+\_\+protect
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A queue which is used to transfer data from one task to another. 
+
+If parameter \textquotesingle{}thread\+\_\+protect\textquotesingle{} is {\ttfamily True} when a queue is created, transfers of data will be protected from corruption in the case that one task might interrupt another due to use in a pre-\/emptive multithreading environment or due to one task being run as an interrupt service routine.
+
+An example of the creation and use of a queue is as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ task\_share}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ This\ queue\ holds\ unsigned\ short\ (16-\/bit)\ integers}}
+\DoxyCodeLine{my\_queue\ =\ \mbox{\hyperlink{classtask__share_1_1_queue}{task\_share.Queue}}\ (\textcolor{stringliteral}{'H'},\ 100,\ name=\textcolor{stringliteral}{"{}My\ Queue"{}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Somewhere\ in\ one\ task,\ put\ data\ into\ the\ queue}}
+\DoxyCodeLine{my\_queue.put\ (some\_data)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ In\ another\ task,\ read\ data\ from\ the\ queue}}
+\DoxyCodeLine{something\ =\ my\_queue.get\ ()}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtask__share_1_1_queue_a74a2bf942ef1d70302551900c16af635}\index{task\_share.Queue@{task\_share.Queue}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a74a2bf942ef1d70302551900c16af635} 
+task\+\_\+share.\+Queue.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{type\+\_\+code}{, }\item[{}]{size}{, }\item[{}]{thread\+\_\+protect}{ = {\ttfamily False}, }\item[{}]{overwrite}{ = {\ttfamily False}, }\item[{}]{name}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+
+
+Initialize a queue object to carry and buffer data between tasks. 
+
+This method sets up a queue by allocating memory for the contents and setting up the components in an empty configuration.
+
+Each queue can only carry data of one particular type which must be chosen from the following list. The data type is specified by a one-\/letter type code which is given as for the Python {\ttfamily array.\+array} type, which can be any of the following\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }&\cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-3}
+\endhead
+{\bfseries{b}} (signed char)   &{\bfseries{B}} (unsigned char)   &8 bit integers    \\\cline{1-3}
+{\bfseries{h}} (signed short)   &{\bfseries{H}} (unsigned short)   &16 bit integers    \\\cline{1-3}
+{\bfseries{i}} (signed int)   &{\bfseries{I}} (unsigned int)   &32 bit integers (probably)    \\\cline{1-3}
+{\bfseries{l}} (signed long)   &{\bfseries{L}} (unsigned long)   &32 bit integers    \\\cline{1-3}
+{\bfseries{q}} (signed long long)   &{\bfseries{Q}} (unsigned long long)   &64 bit integers    \\\cline{1-3}
+{\bfseries{f}} (float)   &{\bfseries{d}} (double-\/precision float)   &\\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+\_\+code} & The type of data items which the queue can hold \\
+\hline
+{\em size} & The maximum number of items which the queue can hold \\
+\hline
+{\em thread\+\_\+protect} & {\ttfamily True} if mutual exclusion protection is used \\
+\hline
+{\em overwrite} & If {\ttfamily True}, oldest data will be overwritten with new data if the queue becomes full \\
+\hline
+{\em name} & A short name for the queue, default {\ttfamily QueueN} where {\ttfamily N} is a serial number for the queue \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtask__share_1_1_queue_a7b9626a0859625dbcf6d964b8b5c7761}\index{task\_share.Queue@{task\_share.Queue}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a7b9626a0859625dbcf6d964b8b5c7761} 
+task\+\_\+share.\+Queue.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+This method puts diagnostic information about the queue into a string. 
+
+It shows the queue\textquotesingle{}s name and type as well as the maximum number of items and queue size. \Hypertarget{classtask__share_1_1_queue_ac9552672266377c23011552e9df15a63}\index{task\_share.Queue@{task\_share.Queue}!any@{any}}
+\index{any@{any}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{any()}{any()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_ac9552672266377c23011552e9df15a63} 
+task\+\_\+share.\+Queue.\+any (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Check if there are any items in the queue. 
+
+Returns {\ttfamily True} if there are any items in the queue and {\ttfamily False} if the queue is empty. \begin{DoxyReturn}{Returns}
+{\ttfamily True} if items are in the queue, {\ttfamily False} if not 
+\end{DoxyReturn}
+\Hypertarget{classtask__share_1_1_queue_a0d4b70d239eb7244ff3b7e54d4a4981e}\index{task\_share.Queue@{task\_share.Queue}!clear@{clear}}
+\index{clear@{clear}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a0d4b70d239eb7244ff3b7e54d4a4981e} 
+task\+\_\+share.\+Queue.\+clear (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Remove all contents from the queue. 
+
+\Hypertarget{classtask__share_1_1_queue_afee296230d2346df88ffb4b2b22208f3}\index{task\_share.Queue@{task\_share.Queue}!empty@{empty}}
+\index{empty@{empty}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_afee296230d2346df88ffb4b2b22208f3} 
+task\+\_\+share.\+Queue.\+empty (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Check if the queue is empty. 
+
+Returns {\ttfamily True} if there are no items in the queue and {\ttfamily False} if there are any items therein. \begin{DoxyReturn}{Returns}
+{\ttfamily True} if queue is empty, {\ttfamily False} if it\textquotesingle{}s not empty 
+\end{DoxyReturn}
+\Hypertarget{classtask__share_1_1_queue_a72be18f8267b2977117eedf15ad896c8}\index{task\_share.Queue@{task\_share.Queue}!full@{full}}
+\index{full@{full}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{full()}{full()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a72be18f8267b2977117eedf15ad896c8} 
+task\+\_\+share.\+Queue.\+full (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Check if the queue is full. 
+
+This method returns {\ttfamily True} if the queue is already full and there is no room for more data without overwriting existing data. \begin{DoxyReturn}{Returns}
+{\ttfamily True} if the queue is full 
+\end{DoxyReturn}
+\Hypertarget{classtask__share_1_1_queue_a6fec4a9775651c30a4c6de357eb701fc}\index{task\_share.Queue@{task\_share.Queue}!get@{get}}
+\index{get@{get}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a6fec4a9775651c30a4c6de357eb701fc} 
+task\+\_\+share.\+Queue.\+get (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{in\+\_\+\+ISR}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+
+
+Read an item from the queue. 
+
+If there isn\textquotesingle{}t anything in there, wait (blocking the calling process) until something becomes available. If non-\/blocking reads are needed, one should call {\ttfamily \doxylink{classtask__share_1_1_queue_ac9552672266377c23011552e9df15a63}{any()}} to check for items before attempting to read from the queue. This is usually done in a low priority task\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{def\ }some\_task\ ():}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{\#\ Setup}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ my\_queue.any\ ():}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ something\ =\ my\_queue.get\ ()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ do\_something\_with\ (something)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{\#\ More\ loop\ stuff}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{yield}\ 0}
+
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+\+ISR} & Set this to {\ttfamily True} if calling from within an ISR \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtask__share_1_1_queue_aef595fc4133d297e2b63014c47ac5f27}\index{task\_share.Queue@{task\_share.Queue}!num\_in@{num\_in}}
+\index{num\_in@{num\_in}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{num\_in()}{num\_in()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_aef595fc4133d297e2b63014c47ac5f27} 
+task\+\_\+share.\+Queue.\+num\+\_\+in (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Check how many items are in the queue. 
+
+This method returns the number of items which are currently in the queue. \begin{DoxyReturn}{Returns}
+The number of items in the queue 
+\end{DoxyReturn}
+\Hypertarget{classtask__share_1_1_queue_a0611b4838abb13731d1d487a8178b883}\index{task\_share.Queue@{task\_share.Queue}!put@{put}}
+\index{put@{put}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a0611b4838abb13731d1d487a8178b883} 
+task\+\_\+share.\+Queue.\+put (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{item}{, }\item[{}]{in\+\_\+\+ISR}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+
+
+Put an item into the queue. 
+
+If there isn\textquotesingle{}t room for the item, wait (blocking the calling process) until room becomes available, unless the {\ttfamily overwrite} constructor parameter was set to {\ttfamily True} to allow old data to be clobbered. If non-\/blocking behavior without overwriting is needed, one should call {\ttfamily \doxylink{classtask__share_1_1_queue_a72be18f8267b2977117eedf15ad896c8}{full()}} to ensure that the queue is not full before putting data into it\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{def\ }some\_task\ ():}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{\#\ Setup}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ my\_queue.full\ ():}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ my\_queue.put\ (create\_something\_to\_put\ ())}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{yield}\ 0}
+
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to be placed into the queue \\
+\hline
+{\em in\+\_\+\+ISR} & Set this to {\ttfamily True} if calling from within an ISR \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtask__share_1_1_queue_ad1e2a4a6b081dd65989ce7af29610abe}\index{task\_share.Queue@{task\_share.Queue}!\_buffer@{\_buffer}}
+\index{\_buffer@{\_buffer}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_buffer}{\_buffer}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_ad1e2a4a6b081dd65989ce7af29610abe} 
+task\+\_\+share.\+Queue.\+\_\+buffer = array.\+array (type\+\_\+code, range (size))\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_a6b3d9887cdd99611f3288c7983581dfd}\index{task\_share.Queue@{task\_share.Queue}!\_max\_full@{\_max\_full}}
+\index{\_max\_full@{\_max\_full}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_max\_full}{\_max\_full}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a6b3d9887cdd99611f3288c7983581dfd} 
+task\+\_\+share.\+Queue.\+\_\+max\+\_\+full\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_a5b343508c95c7cc8ee37992cf7d286ca}\index{task\_share.Queue@{task\_share.Queue}!\_name@{\_name}}
+\index{\_name@{\_name}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_name}{\_name}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a5b343508c95c7cc8ee37992cf7d286ca} 
+task\+\_\+share.\+Queue.\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \textcolor{keywordtype}{None}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{stringliteral}{'Queue'}\ +\ str\ (Queue.ser\_num)}
+
+\end{DoxyCode}
+\Hypertarget{classtask__share_1_1_queue_a241d2037385f56f5fc7487d2a84fe9ac}\index{task\_share.Queue@{task\_share.Queue}!\_num\_items@{\_num\_items}}
+\index{\_num\_items@{\_num\_items}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_num\_items}{\_num\_items}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a241d2037385f56f5fc7487d2a84fe9ac} 
+task\+\_\+share.\+Queue.\+\_\+num\+\_\+items = self.\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_af15a266174233221505d2abf8fef7e95}\index{task\_share.Queue@{task\_share.Queue}!\_overwrite@{\_overwrite}}
+\index{\_overwrite@{\_overwrite}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_overwrite}{\_overwrite}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_af15a266174233221505d2abf8fef7e95} 
+task\+\_\+share.\+Queue.\+\_\+overwrite = overwrite\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_a846a649a41a37dc094cad4c28ec9170f}\index{task\_share.Queue@{task\_share.Queue}!\_rd\_idx@{\_rd\_idx}}
+\index{\_rd\_idx@{\_rd\_idx}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_rd\_idx}{\_rd\_idx}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a846a649a41a37dc094cad4c28ec9170f} 
+int task\+\_\+share.\+Queue.\+\_\+rd\+\_\+idx = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_ad256c3ac46d8ad097b921c8d448b1b96}\index{task\_share.Queue@{task\_share.Queue}!\_size@{\_size}}
+\index{\_size@{\_size}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_ad256c3ac46d8ad097b921c8d448b1b96} 
+task\+\_\+share.\+Queue.\+\_\+size = size\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_addb876a457d389d6110a1667c05c4ae3}\index{task\_share.Queue@{task\_share.Queue}!\_wr\_idx@{\_wr\_idx}}
+\index{\_wr\_idx@{\_wr\_idx}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{\_wr\_idx}{\_wr\_idx}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_addb876a457d389d6110a1667c05c4ae3} 
+int task\+\_\+share.\+Queue.\+\_\+wr\+\_\+idx = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classtask__share_1_1_queue_a6f9d87b116eb16dba0867d3746af9f5f}\index{task\_share.Queue@{task\_share.Queue}!ser\_num@{ser\_num}}
+\index{ser\_num@{ser\_num}!task\_share.Queue@{task\_share.Queue}}
+\doxysubsubsection{\texorpdfstring{ser\_num}{ser\_num}}
+{\footnotesize\ttfamily \label{classtask__share_1_1_queue_a6f9d87b116eb16dba0867d3746af9f5f} 
+int task\+\_\+share.\+Queue.\+ser\+\_\+num = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A counter used to give serial numbers to queues for diagnostic use. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{task__share_8py}{task\+\_\+share.\+py}}\end{DoxyCompactItemize}
