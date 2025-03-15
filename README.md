@@ -1,10 +1,21 @@
 # Team 14 RedbullRomi, ME 405 Time Trial Competition
+
+The goal of the project was to participate in a Romi Robot time trial competition. All participants were required to use a Romi Robot equipped with an STM32L476 Nucleo board, which was mounted on a custom PCB (ShoeOfBrian03C.brd) programmed to run MicroPython. It was up to the competitors to supply the rest of the hardware needed.
+
 Overall, we were able to get the ROMI up and running. Our ROMI was able  to complete the circuit in about 21 seconds after a 5 second deduction for moving a cup. 
+
+## RedBull Romi 
+![RedbullRomi](https://winsalowjp.github.io/ME405/images/redbullromi.png "RedbullRomi")
+
 
 Here is a link to the video of our demo in class ----> [Click Here for YouTube video](https://youtu.be/oJEXl1eLnzM?si=zaIdsHXoJzN_Ktf9).
 
 
 ## Hardware Layout
+We started out with the base Romi robot chassis, a nucleo board, and a ShoeOfBrian03C board.
+
+![Romi Chassis](https://winsalowjp.github.io/ME405/images/RomiBaseChassis.png "Romi Chassis")
+
 Our ROMI was setup with a minimal amount of sensors. As you can see in the image below, the wiring diagram is relatively simple as we did not add
 a bluetooth module or a bump sensor. 
 
