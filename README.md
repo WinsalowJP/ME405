@@ -195,9 +195,18 @@ Here is an FSM diagram detailing the states that drove the actions of ROMI, alth
 
 The ROMI was primarily hard-coded when it came to encoder position and absolute angle. We used the Euler angles from the BNO055 IMU to keep track of the ROMI's angle starting from the beginning of the program, up until it finishes the track.
 
+## Reflection
+
+After finishing the competition, our group felt happy with our robot's performance. There are a few details that we wish we could have done differently. Mainly, it would have been better to break up our t4 task into two different tasks. It would have been good to dedicate one task as the mastermind sensor task to update encoders and read the sensor data and another task as the pid controlled actions task that directs the actions of the robot. 
+
+The sensor task would read sensor values, mainly encoder ticks, to determine what state the actions task should be in, and possibly pass other parameters to the action task, such as the number of encoder ticks needed to go straight at a section of track. The actions task could either be in line following mode or in a different mode of navigation, such as a state that directs the robot to move forward based on encoder ticks. Redundant actions like driving straight or turning could be done in one task with a shared variable, such as the offset angle passed from the sensor task to the actions task in the turn state, which directs the motors to turn according to a specific degree from an original orientation. Basically, if a goal angle is not set and the turn state is active, then the turn state pulls the offset value from the mastermind sensor task and adds that offset to the robot's current orientation pulled from the imu class. Afterward, it sets the pid for turning to that goal angle. Once the goal angle is achieved, the action task clears the goal angle and changes the shared state variable to an idle state, which alerts the mastermind sensor task that the turn is complete. 
+
+This setup would allow us to only hard-code the mastermind sensor task to work for a particular track, and the main benefit would be that the actions task would not need to be hard-coded and could be used for any track. Since our current t4 task is hard-coded to work only with a specific track, the t4 task is useless at completing a new track and would have to be entirely reworked.
+
+Overall, our group learned a lot from this project. One valuable skill our group learned was the importance of understanding and implementing nonblocking code practices. Writing code in a nonblocking manner ensures that the application remains responsive and efficient, even under heavy workloads or when dealing with asynchronous operations. It involves designing programs that do not halt progress while waiting for tasks such as I/O sensor operations, user inputs, and other tasks to complete. The code required for making our program nonblocking can be found in our main file and in our cotask file. To learn more about this, please refer to our documentation page, which is linked below.  
 
 ## Documentation
-Here is the link to our full documentation of the code throguh an HTML site made with Doxygen
+Here is the link to our full documentation of the code throguh an HTML site made with Doxygen.
 
-[Click Here for Documentation!!](https://winsalowjp.github.io/ME405/docs/index.html)
+[Click Here for Documentation!](https://winsalowjp.github.io/ME405/docs/index.html)
 
