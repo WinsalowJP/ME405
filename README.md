@@ -187,7 +187,7 @@ Here is a brief summary of each task:
 * `encoder_update` updated the encoder at a regular interval every 10ms.
 * `t4` was the name we gave our running task. It held the lowest priority due to the nature of the other tasks. 
 
-# Running ROMI from One Task (t4)
+## Running ROMI from One Task (t4)
 
 Here is an FSM diagram detailing the states that drove the actions of ROMI, although lacking in specific details, you will have to check the actual code for more details.
 
@@ -196,7 +196,7 @@ Here is an FSM diagram detailing the states that drove the actions of ROMI, alth
 The ROMI was primarily hard-coded when it came to encoder position and absolute angle. We used the Euler angles from the BNO055 IMU to keep track of the ROMI's angle starting from the beginning of the program, up until it finishes the track.
 
 
-# Documentation
+## Documentation
 Here is the link to our full documentation of the code throguh an HTML site made with Doxygen
 
 [Click Here for Documentation!!](https://winsalowjp.github.io/ME405/docs/index.html)
