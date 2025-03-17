@@ -166,10 +166,18 @@ We went with a simpler approach by using the accelerometer on the IMU to detect 
 
 </table>
 
+For a detailed reference on the pin locations of the Nucleo board, consult the image below, which is sourced from the official documentation provided by the board's manufacturer.
+
+![NUCLEO-L476RG](https://winsalowjp.github.io/ME405/images/nucleo_wiring.png "NUCLEO-L476RG")
+
+For a more comprehensive understanding of the board's specifications, please consult the official NUCLEO-L476RG documentation provided in the PDF link below.
+
+[NUCLEO-L476RG Documentation](https://winsalowjp.github.io/ME405/images/stm32l476rg.pdf)
+
 
 ## Tasks
 
-Our ROMI essentially ran on one task with everything built in. In hindsight, it probably was not the best idea to implement it like that, but it reduced the complexity of our system and helped narrow a lot of issues or prevented a lot of issues from coming up due to its simplicity.  Below is a simple task diagram showing how everything functions
+Our ROMI essentially ran on one task with everything built in. In hindsight, it probably was not the best idea to implement it like that, but it reduced the complexity of our system and helped narrow a lot of issues or prevented a lot of issues from coming up due to its simplicity.  Below is a simple task diagram showing how everything functions.
 
 ![Task diagram](https://winsalowjp.github.io/ME405/images/task_diagram.png "This is the task diagram.")
 
@@ -185,7 +193,7 @@ Here is an FSM diagram detailing the states that drove the actions of ROMI, alth
 
 ![FSM diagram](https://winsalowjp.github.io/ME405/images/fsm1.png "This is a simple FSM diagram")
 
-The ROMI was primarily hard coded when it came to encoder position and absolute angle. We used the Euler angles from the BNO055 IMU to keep track of the ROMI's angle starting from the beginning of the program, up until it finishes the track.
+The ROMI was primarily hard-coded when it came to encoder position and absolute angle. We used the Euler angles from the BNO055 IMU to keep track of the ROMI's angle starting from the beginning of the program, up until it finishes the track.
 
 
 # Documentation
